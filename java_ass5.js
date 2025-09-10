@@ -23,7 +23,7 @@ else if(getTime2 && getName !== ''){
     alert(greeting2 + getName)
     alert(`The time is ${hrs}:${min}:${sec}`)
 }
-else if(getTime3 && getName  !== ''){
+else if(getTime3 && getName !== ''){
     alert(greeting3 + getName)
     alert(`The time is ${hrs}:${min}:${sec}`)
 }
