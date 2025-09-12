@@ -24,32 +24,44 @@
             text-align: left;
             border: 3px solid brown;
         }
-        
+
         @media(max-width: 768px) {
-            body{
+            body {
                 padding: auto;
             }
-            .brr {
-                background-color: white;
-                width: 210%;
+
+            .damn {
+                width: 100%;
+                overflow-x: scroll;
+                box-sizing: border-box;
+            }
+
+            td {
+                padding: 25px;
             }
 
         }
+
         @media(max-width: 325px) {
-            body{
+            body {
                 padding: auto;
             }
-            .brr {
-                background-color: white;
-                width: 210%;
+
+            .damn {
+                width: 100%;
+                overflow-x: scroll;
+                box-sizing: border-box;
             }
 
+            td {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 
 <body class=" p-0 bg-amber-950">
-     <nav class="bg-black border-gray-200 ">
+    <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Victory's
@@ -82,26 +94,29 @@
                     </li>
                     <li>
                         <a href="java_ass4.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS Challenge</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
+                            Challenge</a>
                     </li>
                     <li>
                         <a href="java_ass5.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Timer
-                            </a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                            Timer
+                        </a>
                     </li>
                     <li>
                         <a href="java_ass6.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Checker
-                            </a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                            Checker
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    
-    <div class="brr bg-white p-5">
-        <h1 class="text-purple-800 font-bold text-center text-4xl mt-0"> HISTORY OF JAVASCRIPT</h1>
+
+    <h1 class="text-white font-bold text-center text-4xl mt-0"> HISTORY OF JAVASCRIPT</h1>
+    <div class="damn bg-white p-5">
         <P class="mt-1 text-xl">JavaScript was invented by Brendan Eich in 1995. It was developed for Netscape 2, and
             became the ECMA-262 standard in 1997. After Netscape handed JavaScript over to ECMA, the Mozilla foundation
             continued to develop JavaScript for the Firefox browser.Mozilla's latest version was 1.8.5.
@@ -152,6 +167,7 @@
                     </td>
                     <ul>
                         <td> It brought modern features and syntax that transformed the language:
+
                             <li> Classes: A new syntax for creating objects and managing inheritance.</li>
                             <li> Arrow Functions: A shorter syntax for writing function expressions.</li>
                             <li> let and const: Block-scoped variable declarations.</li>

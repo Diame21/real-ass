@@ -10,7 +10,7 @@ else if (yearsLeft){
     alert(`You're ineligible to drive,you've ${yearsLeft} years left before you can drive.`)
 }
 else{
-    alert("Input a correct value")
+    alert("Input a correct age")
 }
 
 

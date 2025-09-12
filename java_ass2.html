@@ -13,6 +13,7 @@
             text-align: left;
             margin-top: 10px;
             border-spacing: 5px solid black;
+            
         }
 
         thead {
@@ -31,11 +32,13 @@
                 padding: auto;
             }
 
-            .brr {
-                background-color: white;
-                width: 210%;
+            .damn{
+                width: 100%;
+                overflow-x: scroll;
+                box-sizing: border-box;
             }
 
+            
         }
     </style>
 </head>
@@ -93,9 +96,9 @@
     </nav>
 
     <!-- REAL CODE  -->
-    <div class="p-3">
-        <h1 class="text-center text-green-700 text-4xl mt-2 ">Differences Between Let, Var, Const</h1>
-        <table>
+    <h1 class="text-center text-green-700 text-4xl mt-2 ">Differences Between Let, Var, Const</h1>
+    <div class="p-3 damn">
+        <table class="brrr">
             <thead>
                 <tr>
                     <td>Types</td>
