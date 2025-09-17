@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditional</title>
+    <title>Function</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @media(max-width: 768px) {
@@ -12,7 +12,7 @@
                 padding: auto;
             }
 
-            .damn{
+            .brr{
                 width: 100%;
                 overflow-x: scroll;
                 box-sizing: border-box;
@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body class="bg-white">
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -43,33 +43,36 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul
-                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-600 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
                         <a href="index.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
                     </li>
                     <li>
                         <a href="java_ass2.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
                     </li>
                     <li>
                         <a href="java_ass3.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Research</a>
-                    </li>
-                    <li>
-                        <a href="java_ass4.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
                             Challenge</a>
                     </li>
                     <li>
+                        <a href="java_ass4.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                            Timer
+                        </a>
+                    </li>
+                    <li>
                         <a href="java_ass5.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Timer
-                            </a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                            Checker
+                        </a>
                     </li>
                     <li>
                         <a href="java_ass6.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Checker
-                            </a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Function
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -77,53 +80,49 @@
     </nav><br><br>
 
     <!-- REAL CODE  -->
-    <h1 class="p-2 text-3xl">CONDITIONAL STATEMENTS</h1>
-    <pre class=" damn text-xl">
-            <code>
-                // AGE CHECKER 
-                    let userAge = prompt("INPUT YOUR AGE")
-                    userAge = parseInt(userAge)
-                    let yearsLeft = 18 - userAge
+    <button class="bg-gray-400 text-black text-xl rounded-full ml-4 p-4 w-48" onclick="mathematics()">Calculator</button><br><br>
+   <div class="brr bg-black p-3">
+     <h1 class="p-3 text-5xl text-white font-bold"> Function</h1> <br>
+     <pre class="text-white">
+        <code>
+            const mathematics = () => {
+            let firstValue =prompt('Write your first value:').trim()
+            let selector =prompt('Write your operator(-, +, *, /)')
+            let secondValue =('Write your second value:').trim()
 
-                    if (userAge >= 18){
-                        alert(`You're ${userAge} years old and
-                         you're eligible to drive`)
-                    }
-                    else if (yearsLeft){
-                        alert(`You're ineligible to drive,you've ${yearsLeft} 
-                        years left before you can drive.`)
-                    }
-                    else{
-                        alert("Input a correct value")
-                    }
-
-
-             // GRADER CHECKER 
-                    let score = prompt("ENTER YOUR SCORE:")
-                    score = parseInt(score)   
-
-                    if (score >= 80 && score <=100){
-                        alert('Grade: A');
-                    }
-                    else if (score >= 70 && score < 80){
-                        alert('Grade: B')
-                    }
-                    else if (score >= 60 && score < 70){
-                        alert('Grade: C')
-                    }
-                    else if (score >= 50 && score < 60){
-                        alert('Grade: D')
-                    }
-                    else if (score >= 0 && score < 50){
-                        alert('Grade: F')
-                    }
-                    else{
-                        alert("Invalid score entered")
-                    }
-            </code>
-        </pre>
+            if(isNaN(firstValue) || isNaN(secondValue)){
+                alert('One of your value is not a number')
+            }
+            else if(firstValue === "" || secondValue === ""){
+                alert("One of your value is empty")
+            }
+            else if(selector === "+"){
+                let sum = +firstValue + +secondValue
+                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
+                console.log(firstValue)
+                console.log(secondValue)
+            }
+            else if(selector === "*"){
+                let sum = firstValue * secondValue
+                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
+            }
+            else if(selector === "-"){
+                let sum = firstValue - secondValue
+                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
+            }
+            else if(selector === "/"){
+                let sum = firstValue / secondValue
+                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
+            }
+            else(
+                alert('Input a correct value')
+            )
+            }
+        </code>
+     </pre>
+   </div>
     <script src="java_ass6.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-</body>6
+</body>
 
 </html>

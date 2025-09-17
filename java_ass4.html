@@ -4,25 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>30 days of JavaScript</title>
+    <title>ALERT ON STATEMENT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .brr {
-                /* width: 100%; */
-                background:palevioletred;
-            }
+            width: 100%;
+            background: indigo;
+            color: white;
+        }
+
         @media(max-width: 768px) {
             body {
                 padding: auto;
-                
+
             }
 
             .brr {
                 width: 100%;
-                background:palevioletred;
+                background: indigo;
+                color: white;
                 overflow-x: scroll;
             }
-        }           
+        }
     </style>
 </head>
 
@@ -45,157 +48,100 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul
-                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-600 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
                         <a href="index.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
                     </li>
                     <li>
                         <a href="java_ass2.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
                     </li>
                     <li>
                         <a href="java_ass3.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Research</a>
-                    </li>
-                    <li>
-                        <a href="java_ass4.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
                             Challenge</a>
                     </li>
                     <li>
-                        <a href="java_ass5.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                        <a href="java_ass4.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
                             Timer
                         </a>
                     </li>
                     <li>
-                        <a href="java_ass6.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
+                        <a href="java_ass5.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
                             Checker
+                        </a>
+                    </li>
+                     <li>
+                        <a href="java_ass6.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Function
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav><br>
 
     <!-- REAL CODE  -->
-    <!-- <pre class="p-6 overflow-hidden  w-fit">
-    <h1>30 DAYS OF JAVASCRIPT</h1>
-    <p>1. TO DECLARE THE VARIABLE
-     CODE:let challenge = '30 days of Javascript'
-        console.log(challenge)
-    RESULT:30 days of Javascript</p>
-    <p>2. LENGTH OF THE STRING
-    CODE:console.log(challenge.length)
-        // OR 
-        let check = challenge.length
-        console.log(check)
-     RESULT:21
-    </p>
-    <p>3. ALL CHARACTERS TO UPPERCASE
-    CODE:let upper =challenge.toUpperCase()
-        console.log(upper)
-    RESULT:30 DAYS OF JAVASCRIPT
-    </p>
-    <p>4. ALL CHARACTERS TO LOWEECASE
-    CODE:let lower =challenge.toLowercase()
-        console.log(lower)
-    RESULT:30 days of javascript
-    </p>
-    <p>5. CUT OUT THE FIRST WORD OF THE STRING
-    CODE:let cut =challenge.substring(0, 2)
-        console.log(cut)
-    RESULT:30
-    </p>
-    <p>6. SLICE OUT DAYS OF JAVASCRIPT FROM PHRASE
-    CODE:let slice =challenge.substring(3)
-        console.log(slice)
-    RESULT:days of Javascript
-    </p>
-    <p>7. TO CHECK IF STRING CONTAINS SCRIPT 
-    CODE:let change = challenge.includes("script")
-        console.log(change)
-    RESULT:true
-    </p>
-    <p>8. TO SPLIT THE SCRIPT AT THE SPACE
-    CODE:let divide = challenge.split(' ')
-        console.log(divide)
-    RESULT:(4) ['30', 'days', 'of', 'Javascript']
-    </p>
-    <p>9. TO SPLIT THE TECH COMPANIES STRING INTO ARRAY
-    CODE:let companies = 'Facebook, Google, Microsoft,
-                        Apple, IBM, Oracle, Amazon'
-        console.log(companies.split(','))
-    RESULT:(7) ['Facebook', ' Google', ' Microsoft', 
-                ' Apple', ' IBM', ' Oracle', ' Amazon']
-    0: "Facebook"
-    1: " Google"
-    2: " Microsoft"
-    3: " Apple"
-    4: " IBM"
-    5: " Oracle"
-    6: " Amazon"
-    length: 7
-    [[Prototype]]: Array(0)
-    </p>
-</pre> -->
+    <div class="brr">
+
+        <h1 class="p-2 text-2xl">INPUT</h1>
+        <pre>
+             <code>
+                 
+                 let now = new Date()
+                 let min = now.getMinutes()
+                 let sec = now.getSeconds()
+                 let hrs = now.getHours()
+                 
+                 let greeting1 = 'HI,GOOD MORNING'
+                 let greeting2 = 'HI,GOOD AFTERNOON'
+                 let greeting3 = 'HI,GOOD EVENING'
+                 
+                 let getTime1 = hrs >= 1 && hrs < 12
+                 let getTime2 = hrs >= 12 && hrs <= 16
+                 let getTime3 = hrs >= 17 && hrs <= 24
+                 
+                 if(getTime1){
+                     console.log(greeting1)
+                     console.log(`The time is ${hrs}:${min}:${sec}`)
+                    }
+            else if(getTime2){
+                console.log(greeting2)
+                console.log(`The time is ${hrs}:${min}:${sec}`)
+            }
+            else if(getTime3){
+                console.log(greeting3)
+                console.log(`The time is ${hrs}:${min}:${sec}`)
+            }
+            else{
+                console.log('INVALID')
+            }
+            
+            
+        </code>
+    </pre><br><br>
 
 
 
-    <!-- REAL CODE  -->
-    <pre class="p-3 brr">
-    <code>
-    <b class="text-4xl text-white ">30 days of JavaScript </b>
-    <h1 class="font-bold text-2xl p-2 text-white">INPUT</h1>
-    let challenge = '30 days of Javascript'
 
-    console.log(challenge)
-
-    // length of the String
-    check =  "The length is " + challenge.length
-    console.log(check)
-    // TO UPPERCASE 
-    let upper =challenge.toUpperCase()
-    console.log(upper)
-    // TO LOWERCASE 
-    let lower =challenge.toLowerCase()
-    console.log(lower)
-    // TO CUT OUT THE FIRST OF THE SUBSTRING 
-    let cut = "The substring is " + challenge.substring(0, 2)
-    console.log(cut)
-    //SLICE OUT DAYS OF JAVASCRIPT FROM PHRASE
-    let slice =challenge.substring(3)
-    console.log(slice)
-    // TO CHECK IF STRING CONTAINS SCRIPT 
-    let change = challenge.includes("script")
-    console.log(change)
-    // TO SPLIT THE SCRIPT AT THE SPACE
-    let divide = challenge.split(' ')
-    console.log(divide)
-    // TO SPLIT THE TECH COMPANIES STRING INTO ARRAY
-    let companies = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
-    console.log(companies.split(','))
-
-
-    <!-- OUTPUT  -->
-     <h1 class="p-2 text-2xl font-bold text-white">OUTPUT</h1>
-    30 days of Javascript
-    java_ass4.js:7 21
-    java_ass4.js:10 21
-    java_ass4.js:13 30 DAYS OF JAVASCRIPT
-    java_ass4.js:16 30 days of javascript
-    java_ass4.js:19 30
-    java_ass4.js:22 days of Javascript
-    java_ass4.js:25 true
-    java_ass4.js:28 (4) ['30', 'days', 'of', 'Javascript']
-    java_ass4.js:31 (7) ['Facebook', ' Google', ' Microsoft', ' Apple',
-      ' IBM', ' Oracle', ' Amazon']
-    </code>
-</pre>
-
-    <script src="java_ass4.js"></script>
+        <h1 class="p-2 text-2xl">OUTPUT</h1>
+        <pre>
+        <code> 
+            HI,GOOD MORNING
+            java_ass5.js:17 The time is 2:12:38
+                
+            HI,GOOD AFTERNOON
+            java_ass5.js:21 The time is 13:14:56
+            
+            HI,GOOD EVENING
+            java_ass5.js:25 The time is 20:10:21
+        </code>
+    </pre>
+    </div>
+    <script src="java_ass5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

@@ -1,36 +1,38 @@
-// ASSIGNMENT 
-let now = new Date()
+// AGE CHECKER 
+let userAge = prompt("INPUT YOUR AGE")
+userAge = parseInt(userAge)
+let yearsLeft = 18 - userAge
 
-let min = now.getMinutes()
-let sec = now.getSeconds()
-let hrs = now.getHours()
-let getName = prompt('WHAT IS YOUR NAME PLEASE?')
-getName = getName.trim()
-
-let greeting1 = 'HI,GOOD MORNING '
-let greeting2 = 'HI,GOOD AFTERNOON '
-let greeting3 = 'HI,GOOD EVENING '
-
-let getTime1 = hrs >= 1 && hrs < 12
-let getTime2 = hrs >= 12 && hrs <= 16
-let getTime3 = hrs >= 17 && hrs <= 24
-
-if(getTime1 && getName !== ''){
-    alert(greeting1 + getName)
-    alert(`The time is ${hrs}:${min}:${sec}`)
+ if (userAge >= 18){
+    alert(`You're ${userAge} years old and you're eligible to drive`)
 }
-else if(getTime2 && getName !== ''){
-    alert(greeting2 + getName)
-    alert(`The time is ${hrs}:${min}:${sec}`)
-}
-else if(getTime3 && getName !== ''){
-    alert(greeting3 + getName)
-    alert(`The time is ${hrs}:${min}:${sec}`)
+else if (yearsLeft){
+    alert(`You're ineligible to drive,you've ${yearsLeft} years left before you can drive.`)
 }
 else{
-    alert('Please Input Your Name')
+    alert("Input a correct age")
 }
 
 
+// GRADER CHECKER 
+let score = prompt("ENTER YOUR SCORE:")
+score = parseInt(score)   
 
-
+if (score >= 80 && score <=100){
+    alert('Grade: A');
+}
+else if (score >= 70 && score < 80){
+    alert('Grade: B')
+}
+else if (score >= 60 && score < 70){
+    alert('Grade: C')
+}
+else if (score >= 50 && score < 60){
+    alert('Grade: D')
+}
+else if (score >= 0 && score < 50){
+    alert('Grade: F')
+}
+else{
+    alert("Invalid score entered")
+}

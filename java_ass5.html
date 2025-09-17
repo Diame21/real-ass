@@ -4,27 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALERT ON STATEMENT</title>
+    <title>Conditional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .brr {
-            width: 100%;
-            background: indigo;
-            color: white;
-        }
-
         @media(max-width: 768px) {
             body {
                 padding: auto;
-
             }
 
-            .brr {
+            .damn{
                 width: 100%;
-                background: indigo;
-                color: white;
                 overflow-x: scroll;
+                box-sizing: border-box;
+                
             }
+
+            
         }
     </style>
 </head>
@@ -48,100 +43,88 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul
-                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-600 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
                         <a href="index.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
                     </li>
                     <li>
                         <a href="java_ass2.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Variables</a>
                     </li>
                     <li>
                         <a href="java_ass3.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Research</a>
-                    </li>
-                    <li>
-                        <a href="java_ass4.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">JS
                             Challenge</a>
                     </li>
                     <li>
-                        <a href="java_ass5.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
-                            Timer
-                        </a>
+                        <a href="java_ass4.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Timer
+                            </a>
                     </li>
                     <li>
+                        <a href="java_ass5.html"
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated Checker
+                            </a>
+                    </li>
+                     <li>
                         <a href="java_ass6.html"
-                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Automated
-                            Checker
+                            class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Function
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav><br>
+    </nav><br><br>
 
     <!-- REAL CODE  -->
-    <div class="brr">
+    <h1 class="p-2 text-3xl">CONDITIONAL STATEMENTS</h1>
+    <pre class=" damn text-xl">
+            <code>
+                // AGE CHECKER 
+                    let userAge = prompt("INPUT YOUR AGE")
+                    userAge = parseInt(userAge)
+                    let yearsLeft = 18 - userAge
 
-        <h1 class="p-2 text-2xl">INPUT</h1>
-        <pre>
-             <code>
-                 
-                 let now = new Date()
-                 let min = now.getMinutes()
-                 let sec = now.getSeconds()
-                 let hrs = now.getHours()
-                 
-                 let greeting1 = 'HI,GOOD MORNING'
-                 let greeting2 = 'HI,GOOD AFTERNOON'
-                 let greeting3 = 'HI,GOOD EVENING'
-                 
-                 let getTime1 = hrs >= 1 && hrs < 12
-                 let getTime2 = hrs >= 12 && hrs <= 16
-                 let getTime3 = hrs >= 17 && hrs <= 24
-                 
-                 if(getTime1){
-                     console.log(greeting1)
-                     console.log(`The time is ${hrs}:${min}:${sec}`)
+                    if (userAge >= 18){
+                        alert(`You're ${userAge} years old and
+                         you're eligible to drive`)
                     }
-            else if(getTime2){
-                console.log(greeting2)
-                console.log(`The time is ${hrs}:${min}:${sec}`)
-            }
-            else if(getTime3){
-                console.log(greeting3)
-                console.log(`The time is ${hrs}:${min}:${sec}`)
-            }
-            else{
-                console.log('INVALID')
-            }
-            
-            
-        </code>
-    </pre><br><br>
+                    else if (yearsLeft){
+                        alert(`You're ineligible to drive,you've ${yearsLeft} 
+                        years left before you can drive.`)
+                    }
+                    else{
+                        alert("Input a correct value")
+                    }
 
 
+             // GRADER CHECKER 
+                    let score = prompt("ENTER YOUR SCORE:")
+                    score = parseInt(score)   
 
-
-        <h1 class="p-2 text-2xl">OUTPUT</h1>
-        <pre>
-        <code> 
-            HI,GOOD MORNING
-            java_ass5.js:17 The time is 2:12:38
-                
-            HI,GOOD AFTERNOON
-            java_ass5.js:21 The time is 13:14:56
-            
-            HI,GOOD EVENING
-            java_ass5.js:25 The time is 20:10:21
-        </code>
-    </pre>
-    </div>
-    <script src="java_ass5.js"></script>
+                    if (score >= 80 && score <=100){
+                        alert('Grade: A');
+                    }
+                    else if (score >= 70 && score < 80){
+                        alert('Grade: B')
+                    }
+                    else if (score >= 60 && score < 70){
+                        alert('Grade: C')
+                    }
+                    else if (score >= 50 && score < 60){
+                        alert('Grade: D')
+                    }
+                    else if (score >= 0 && score < 50){
+                        alert('Grade: F')
+                    }
+                    else{
+                        alert("Invalid score entered")
+                    }
+            </code>
+        </pre>
+    <script src="java_ass6.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-</body>
+</body>6
 
 </html>

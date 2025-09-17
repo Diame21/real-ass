@@ -1,38 +1,33 @@
-// AGE CHECKER 
-let userAge = prompt("INPUT YOUR AGE")
-userAge = parseInt(userAge)
-let yearsLeft = 18 - userAge
+const mathematics = () => {
+    let firstValue =prompt('Write your first value:').trim()
+    let selector =prompt('Write your operator(-, +, *, /)')
+    let secondValue =('Write your second value:').trim()
 
- if (userAge >= 18){
-    alert(`You're ${userAge} years old and you're eligible to drive`)
+if(isNaN(firstValue) || isNaN(secondValue)){
+    alert('One of your value is not a number')
 }
-else if (yearsLeft){
-    alert(`You're ineligible to drive,you've ${yearsLeft} years left before you can drive.`)
+else if(firstValue === "" || secondValue === ""){
+    alert("One of your value is empty")
 }
-else{
-    alert("Input a correct age")
+else if(selector === "+"){
+    let sum = +firstValue + +secondValue
+    alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
+    console.log(firstValue)
+    console.log(secondValue)
 }
-
-
-// GRADER CHECKER 
-let score = prompt("ENTER YOUR SCORE:")
-score = parseInt(score)   
-
-if (score >= 80 && score <=100){
-    alert('Grade: A');
+else if(selector === "*"){
+    let sum = firstValue * secondValue
+    alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
 }
-else if (score >= 70 && score < 80){
-    alert('Grade: B')
+else if(selector === "-"){
+    let sum = firstValue - secondValue
+    alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
 }
-else if (score >= 60 && score < 70){
-    alert('Grade: C')
+else if(selector === "/"){
+    let sum = firstValue / secondValue
+    alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
 }
-else if (score >= 50 && score < 60){
-    alert('Grade: D')
-}
-else if (score >= 0 && score < 50){
-    alert('Grade: F')
-}
-else{
-    alert("Invalid score entered")
+else(
+    alert('Input a correct value')
+)
 }
