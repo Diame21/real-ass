@@ -4,27 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function</title>
+    <title>DOM-2</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<style>
+    input{
+        padding: 20px 0;
+        background-color: white;
+        color: black;
+        /* border: 10px; */
+        border-color: brown;
+         /* padding: 5px 0; */
+            width: 10%;
+            border: 2px solid black;
+    }
+
         @media(max-width: 768px) {
             body {
                 padding: auto;
             }
 
-            .brr{
+            .brr {
                 width: 100%;
                 overflow-x: scroll;
                 box-sizing: border-box;
-                
+
             }
 
-            
+
         }
     </style>
 </head>
 
-<body class="bg-white">
+<body>
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -79,7 +90,7 @@
                             class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">DOM
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="java_ass8.html"
                             class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Calcuator
                         </a>
@@ -89,49 +100,23 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL CODE  -->
-    <button class="bg-gray-400 text-black text-xl rounded-full ml-4 p-4 w-48" onclick="mathematics()">Calculator</button><br><br>
-   <div class="brr bg-black p-3">
-     <h1 class="p-3 text-5xl text-white font-bold"> Function</h1> <br>
-     <pre class="text-white">
-        <code>
-            const mathematics = () => {
-            let firstValue =prompt('Write your first value:').trim()
-            let selector =prompt('Write your operator(-, +, *, /)')
-            let secondValue =('Write your second value:').trim()
 
-            if(isNaN(firstValue) || isNaN(secondValue)){
-                alert('One of your value is not a number')
-            }
-            else if(firstValue === "" || secondValue === ""){
-                alert("One of your value is empty")
-            }
-            else if(selector === "+"){
-                let sum = +firstValue + +secondValue
-                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
-                console.log(firstValue)
-                console.log(secondValue)
-            }
-            else if(selector === "*"){
-                let sum = firstValue * secondValue
-                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
-            }
-            else if(selector === "-"){
-                let sum = firstValue - secondValue
-                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
-            }
-            else if(selector === "/"){
-                let sum = firstValue / secondValue
-                alert(`The sum of ${firstValue} & ${secondValue} = ${sum}`)
-            }
-            else(
-                alert('Input a correct value')
-            )
-            }
-        </code>
-     </pre>
-   </div>
-    <script src="java_ass6.js"></script>
+    <h1>SIMPLE CALCULATOR</h1><br><br>
+    <div class="p-3">
+        <input type="number" id="num1" placeholder="first value"/>
+        <select name="" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value=""></option>
+        </select>
+        <input type="number" id="num2" placeholder="second value"/> 
+        <button onclick="answer()">Answer</button>
+        <p id="calculate"></p>
+  
+    </div>
+    <script src="java_ass8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
