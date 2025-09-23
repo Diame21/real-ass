@@ -43,13 +43,13 @@ function Retirement() {
     let message;
 
     if (age < retirementAge) {
-        result = (`You're ${age} and you have ${ yearsLeft } years left to retire.`)
+        result = (`You're ${age} years now and you have ${ yearsLeft } years left to retire.`)
     }
     else if(age === 60){
         result = ("You would be retiring this year")
     }
     else if (age > retirementAge){
-        result = (`You're ${age} and you should have retired ${yearsdelayed} years ago`)
+        result = (`You're ${age} years of age and you should have retired ${yearsdelayed} years ago`)
     }
     else {
         result = ("Input a number")
