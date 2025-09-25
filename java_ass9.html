@@ -4,54 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM-2</title>
+    <title>Loan Repayment App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        input {
-            background-color: white;
-            color: black;
-            width: 10%;
-            border: 2px solid black;
-            
+        .form {
+            background-color: green;
+            width: 350px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: -10px -6px 50px white;
+            margin: auto;
+            margin-top: 30px;
         }
 
-        button {
-            /* background-color: red; */
-            width: 10%;
-            border: 2px solid white;
-            border-radius: 20px;
+        input {
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            height: 40px;
+            font-size: 20px;
+            font-weight: 400;
+
+
         }
 
         select {
-            background-color: white;
-            border-color: brown;
-            width: 50px;
-            border: 2px solid black;
+            padding: 10px;
+            border-radius: 4px;
         }
 
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-            button {
-                width: 20%;
-            }
+        p {
+            font-size: 18px;
+            color: white;
 
-            input {
-                width: 30%;
-
-            } 
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
         }
     </style>
+
 </head>
 
-<body class="bg-red-700">
+<body>
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -70,7 +61,7 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul
-                    class="flex flex-col font-medium text-center p-4 md:p-0 mt-4 border border-gray-600 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    class="flex flex-col font-medium v p-4 md:p-0 mt-4 border border-gray-600 rounded-lg text-center md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
                         <a href="index.html"
                             class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
@@ -145,98 +136,25 @@
     </nav><br><br>
 
 
-    <h1 class="p-3 font-bold text-black text-center text-3xl">SIMPLE CALCULATOR</h1><br>
-    <div class="p-3 text-center ">
-        <input type="number" id="num1" placeholder="first value" />
-        <select name="" id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value=""></option>
-        </select>
-        <input type="number" id="num2" placeholder="second value"/> <br><br>
-        <button onclick="answer()" class="bg-green-600 font-bold">Answer </button> <br>
-        <p id="calculate" class="text-white"></p>
-    </div><br><br>
-
-
-
-    <!-- Assignment 2  -->
-    <h1 class="font-bold p-3 text-3xl text-center text-black">RETIREMENT CHECKER</h1>
-    <div class="p-3 text-center">
-        <input type="number" id="age" placeholder="Enter your age" class="w-56 text-center"/> <br> <br>
-        <button onclick="Retirement()" class="w-40 bg-green-600 font-bold" >Retirement checker</button><br>
-        <p id="retireResult" class="text-white"></p>
+    <!-- REAL code  -->
+    <div class="form">
+        <div class="flex flex-row gap-6">
+            <input type="text" name="" id="loanAmount" placeholder="Amount">
+            <select name="" id="months" placeholder="Duration">
+                <option value="Duration">Duration</option>
+                <option value="1" id="months">1 month</option>
+                <option value="2" id="months">2 months</option>
+                <option value="3" id="months">3 months</option>
+                <option value="4" id="months">4 months</option>
+                <option value="5" id="months">5 months</option>
+            </select>
+        </div> <br><br>
+        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate interest</button>
+        <p id="calculate"></p>
     </div>
+    
 
-    <pre class="bg-white brr">
-        <code>
-            function answer() {
-            let num1 = parseFloat(document.getElementById('num1').value.trim())
-            let num2 = parseFloat(document.getElementById('num2').value.trim())
-            let operator = document.getElementById('operator').value
-            let result;
-            if (num1 === "") {
-                result = "Input can't be empty!"
-            }
-            else if (isNaN(num1) || isNaN(num2)) {
-                result = "Input must be a number"
-            }
-            else {
-                switch (operator) {
-                    case '+':
-                        result = num1 + num2;
-                        break;
-                    case '-':
-                        result = num1 - num2;
-                        break;
-                    case '*':
-                        result = num1 * num2;
-                        break;
-                    case '/':
-                        result = num2 !== 0 ? num1 / num2 : "Cannot be divided by zero"
-                        break;
-                    default:
-                        result = "invalid operator";
-                }
-            }
-
-            document.getElementById("calculate").textContent = "Result: " + result;
-        }
-
-
-
-
-        // Age retirement 
-        function Retirement() {
-            const age = parseInt(document.getElementById("age").value);
-            let retirementAge = 60;
-            let yearsLeft = retirementAge - age;
-            let yearsdelayed = age - retirementAge
-            let message;
-
-           if (age < retirementAge) {
-                result = (`You're ${age} years now and you have ${ yearsLeft } years left to retire.`)
-            }
-            else if(age === 60){
-                result = ("You would be retiring this year")
-            }
-            else if (age > retirementAge){
-                result = (`You're ${age} years of age and you should have retired ${yearsdelayed} years ago`)
-            }
-            else {
-                result = ("Input a number")
-            }
-
-            document.getElementById("retireResult").textContent = result;
-        }
-
-
-        </code>
-    </pre>
-
-    <script src="java_ass8.js"></script>
+    <script src="java_ass9.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

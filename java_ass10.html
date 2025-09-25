@@ -4,43 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM-2</title>
+    <title>Array</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        input {
-            background-color: white;
-            color: black;
-            width: 10%;
-            border: 2px solid black;
-            
-        }
-
-        button {
-            /* background-color: red; */
-            width: 10%;
-            border: 2px solid white;
-            border-radius: 20px;
-        }
-
-        select {
-            background-color: white;
-            border-color: brown;
-            width: 50px;
-            border: 2px solid black;
-        }
-
         @media(max-width: 768px) {
             body {
                 padding: auto;
             }
-            button {
-                width: 20%;
-            }
-
-            input {
-                width: 30%;
-
-            } 
             .brr {
                 width: 100%;
                 overflow-x: scroll;
@@ -51,7 +21,7 @@
     </style>
 </head>
 
-<body class="bg-red-700">
+<body>
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -144,100 +114,64 @@
         </div>
     </nav><br><br>
 
-
-    <h1 class="p-3 font-bold text-black text-center text-3xl">SIMPLE CALCULATOR</h1><br>
-    <div class="p-3 text-center ">
-        <input type="number" id="num1" placeholder="first value" />
-        <select name="" id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value=""></option>
-        </select>
-        <input type="number" id="num2" placeholder="second value"/> <br><br>
-        <button onclick="answer()" class="bg-green-600 font-bold">Answer </button> <br>
-        <p id="calculate" class="text-white"></p>
-    </div><br><br>
-
-
-
-    <!-- Assignment 2  -->
-    <h1 class="font-bold p-3 text-3xl text-center text-black">RETIREMENT CHECKER</h1>
-    <div class="p-3 text-center">
-        <input type="number" id="age" placeholder="Enter your age" class="w-56 text-center"/> <br> <br>
-        <button onclick="Retirement()" class="w-40 bg-green-600 font-bold" >Retirement checker</button><br>
-        <p id="retireResult" class="text-white"></p>
-    </div>
-
-    <pre class="bg-white brr">
+    <!-- real code  -->
+     <h1 class="p-4 font-bold text-green-800 text-2xl">ARRAY AND IT'S METHOD</h1>   
+     <pre class="brr">
         <code>
-            function answer() {
-            let num1 = parseFloat(document.getElementById('num1').value.trim())
-            let num2 = parseFloat(document.getElementById('num2').value.trim())
-            let operator = document.getElementById('operator').value
-            let result;
-            if (num1 === "") {
-                result = "Input can't be empty!"
-            }
-            else if (isNaN(num1) || isNaN(num2)) {
-                result = "Input must be a number"
-            }
-            else {
-                switch (operator) {
-                    case '+':
-                        result = num1 + num2;
-                        break;
-                    case '-':
-                        result = num1 - num2;
-                        break;
-                    case '*':
-                        result = num1 * num2;
-                        break;
-                    case '/':
-                        result = num2 !== 0 ? num1 / num2 : "Cannot be divided by zero"
-                        break;
-                    default:
-                        result = "invalid operator";
+            // 1st question
+                const countries = [
+                    'Albania',
+                    'Bolivia',
+                    'Canada',
+                    'Denmark',
+                    'Ethiopia',
+                    'Finland',
+                    'Germany',
+                    'Hungary',
+                    'Ireland',
+                    'Japan',
+                    'Kenya'
+                ]
+
+                if (countries.includes('Ethiopia')) {
+                    console.log(countries.indexOf('Ethiopia'))
+                    console.log('ETHIOPIA');
                 }
-            }
-
-            document.getElementById("calculate").textContent = "Result: " + result;
-        }
 
 
 
-
-        // Age retirement 
-        function Retirement() {
-            const age = parseInt(document.getElementById("age").value);
-            let retirementAge = 60;
-            let yearsLeft = retirementAge - age;
-            let yearsdelayed = age - retirementAge
-            let message;
-
-           if (age < retirementAge) {
-                result = (`You're ${age} years now and you have ${ yearsLeft } years left to retire.`)
-            }
-            else if(age === 60){
-                result = ("You would be retiring this year")
-            }
-            else if (age > retirementAge){
-                result = (`You're ${age} years of age and you should have retired ${yearsdelayed} years ago`)
-            }
-            else {
-                result = ("Input a number")
-            }
-
-            document.getElementById("retireResult").textContent = result;
-        }
+                // second question 
+                const webTechs = [
+                    'HTML',
+                    'CSS',
+                    'JavaScript',
+                    'React',
+                    'Redux',
+                    'Node',
+                    'MongoDB'
+                ]
+                console.log(webTechs.includes('Sass'))
+                console.log(webTechs.push('Sass'));
+                console.log(webTechs);
 
 
+
+                // 3rd question 
+                const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+                console.log(shoppingCart.unshift('Meat'));
+                console.log(shoppingCart.push('Sugar'));
+                console.log(shoppingCart);
+                const honey = shoppingCart.indexOf('Honey')
+                console.log(shoppingCart.splice(honey,1));
+                const mTea = shoppingCart.indexOf('Tea')
+                if(mTea !== -1){
+                    shoppingCart[mTea] = 'Green Tea'
+                }
+                console.log(shoppingCart);
         </code>
-    </pre>
-
-    <script src="java_ass8.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+     </pre>
+    <script src="java_ass10.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
