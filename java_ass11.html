@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        p{
+        p {
             font-size: 20px;
             font-weight: 800;
         }
-        span{
+
+        span {
             font-size: 15px;
+        }
+        @media(max-width: 768px) {
+            body {
+                padding: auto;
+            }
+            
         }
     </style>
 </head>
+
 <body>
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -101,7 +111,8 @@
                                 </li>
                                 <li>
                                     <a href="java_ass11.html"
-                                        class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Guess game
+                                        class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Guess
+                                        game
                                     </a>
                                 </li>
                             </ul>
@@ -113,18 +124,20 @@
     </nav><br><br>
 
     <!-- REAL CODE  -->
-    <div id="all">
+    <div id="all" >
         <div id="all2">
             <p>GUESS GAME</p>
-            <p>Note: <span>ranges from 10 to 25</span></p><br>
+            <p>Ranges from 10 to 25</p><br><br>
             <input id="userInput" type="text">
             <div class="text-center">
-                <button id="myBtn1" onclick="guess()">Guess</button>    
+                <button id="myBtn1" onclick="guess()">Guess</button>
                 <button id="myBtn2" onclick="resetGame()">Reset</button>
             </div>
             <p id="answer"></p>
         </div>
     </div>
     <script src="java_ass11.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
+
 </html>

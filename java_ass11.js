@@ -67,10 +67,11 @@ calculate.style.color = "white"
 const about = {
   background: "blue",
   color: "white",
-  width: "50%",
+  width: "100%",
+  maxWidth:"500px",
   height: "auto",
   borderRadius: "10px",
-  marginTop: '50px',
+  margin: 'auto',
 
 }
 const about2 = {
@@ -80,11 +81,13 @@ const input = {
   borderRadius: "10px",
   padding: "10px",
   width: "100%",
+  maxWidth: "400px"
 }
 
 const aboutbutton = {
   border: "none",
   background: "white",
+  color:"black",
   borderRadius: "20px",
   padding: "10px 40px",
   marginTop: "20px"
