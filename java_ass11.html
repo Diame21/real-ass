@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Guess game</title>
     <style>
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
+        p{
+            font-size: 20px;
+            font-weight: 800;
+        }
+        span{
+            font-size: 15px;
         }
     </style>
 </head>
-
 <body>
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -119,67 +112,19 @@
         </div>
     </nav><br><br>
 
-    <!-- real code  -->
-     <h1 class="p-4 font-bold text-green-800 text-2xl">ARRAY AND IT'S METHOD</h1>   
-     <pre class="brr">
-        <code>
-            // 1st question
-                const countries = [
-                    'Albania',
-                    'Bolivia',
-                    'Canada',
-                    'Denmark',
-                    'Ethiopia',
-                    'Finland',
-                    'Germany',
-                    'Hungary',
-                    'Ireland',
-                    'Japan',
-                    'Kenya'
-                ]
-
-                if (countries.includes('Ethiopia')) {
-                    console.log(countries.indexOf('Ethiopia'))
-                    console.log('ETHIOPIA');
-                }
-
-
-
-                // second question 
-                const webTechs = [
-                    'HTML',
-                    'CSS',
-                    'JavaScript',
-                    'React',
-                    'Redux',
-                    'Node',
-                    'MongoDB'
-                ]
-                if (webTechs.includes('Sass')) {
-                    console.log('Sass is a CSS processor');
-                }
-                else{
-                    console.log(webTechs.push('Sass'))
-                    console.log(webTechs);
-                }
-
-
-                // 3rd question 
-                const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
-                console.log(shoppingCart.unshift('Meat'));
-                console.log(shoppingCart.push('Sugar'));
-                console.log(shoppingCart);
-                const honey = shoppingCart.indexOf('Honey')
-                console.log(shoppingCart.splice(honey,1));
-                const mTea = shoppingCart.indexOf('Tea')
-                if(mTea !== -1){
-                    shoppingCart[mTea] = 'Green Tea'
-                }
-                console.log(shoppingCart);
-        </code>
-     </pre>
-    <script src="java_ass10.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- REAL CODE  -->
+    <div id="all">
+        <div id="all2">
+            <p>GUESS GAME</p>
+            <p>Note: <span>ranges from 10 to 25</span></p><br>
+            <input id="userInput" type="text">
+            <div class="text-center">
+                <button id="myBtn1" onclick="guess()">Guess</button>    
+                <button id="myBtn2" onclick="resetGame()">Reset</button>
+            </div>
+            <p id="answer"></p>
+        </div>
+    </div>
+    <script src="java_ass11.js"></script>
 </body>
-
 </html>

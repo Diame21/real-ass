@@ -30,9 +30,13 @@ const webTechs = [
     'Node',
     'MongoDB'
 ]
-console.log(webTechs.includes('Sass'))
-console.log(webTechs.push('Sass'));
-console.log(webTechs);
+if (webTechs.includes('Sass')) {
+    console.log('Sass is a CSS processor');
+}
+else{
+    console.log(webTechs.push('Sass'))
+    console.log(webTechs);
+}
 
 
 
@@ -42,9 +46,9 @@ console.log(shoppingCart.unshift('Meat'));
 console.log(shoppingCart.push('Sugar'));
 console.log(shoppingCart);
 const honey = shoppingCart.indexOf('Honey')
-console.log(shoppingCart.splice(honey,1));
+console.log(shoppingCart.splice(honey, 1));
 const mTea = shoppingCart.indexOf('Tea')
-if(mTea !== -1){
+if (mTea !== -1) {
     shoppingCart[mTea] = 'Green Tea'
 }
 console.log(shoppingCart);
