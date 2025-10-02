@@ -68,7 +68,7 @@ const about = {
   background: "blue",
   color: "white",
   width: "100%",
-  maxWidth:"410px",
+  maxWidth:"350px",
   height: "auto",
   borderRadius: "10px",
   margin: 'auto',
