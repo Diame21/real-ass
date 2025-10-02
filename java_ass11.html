@@ -15,11 +15,19 @@
         span {
             font-size: 15px;
         }
+
         @media(max-width: 768px) {
             body {
                 padding: auto;
             }
-            
+
+            .brr {
+                width: 100%;
+                overflow-x: scroll;
+                box-sizing: border-box;
+
+            }
+
         }
     </style>
 </head>
@@ -115,6 +123,11 @@
                                         game
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="java_ass12.html"
+                                        class="block py-2 px-3 text-white rounded-sm hover:bg-gray-600 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Loops
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -124,7 +137,7 @@
     </nav><br><br>
 
     <!-- REAL CODE  -->
-    <div id="all" class="p-6" >
+    <div id="all" class="p-6">
         <div id="all2">
             <p>GUESS GAME</p>
             <p>Ranges from 10 to 25</p><br><br>
@@ -136,6 +149,12 @@
             <p id="answer"></p>
         </div>
     </div>
+
+    <pre class="brr">
+        <code>
+
+        </code>
+    </pre>
     <script src="java_ass11.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
