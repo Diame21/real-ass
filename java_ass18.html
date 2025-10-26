@@ -4,58 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>Hotel Booking App</title>
+    <link rel="stylesheet" href="java_ass18.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .form {
-            background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
-            margin: auto;
-            margin-top: 30px;
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
-            color: white;
-
-        }
-
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
-        }
-    </style>
 
 </head>
 
-<body>
+<body class="bg-blue-700 text-yellow-500">
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -278,77 +234,235 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
 
-    <pre class="brr bg-blue-950 text-white">
-        <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+    <!-- ReaL CODE  -->
+    <div class="allbox">
+        <div id="Firsthotel">
+            <h1 class=" text-yellow-500 text-3xl font-bold text-center">
+                Accommodations Reservation
+            </h1>
+        </div>
+        <div id="loading1">
+            <h1 class="text-yellow-500 text-3xl font-bold text-center">
+                Loading........
+            </h1>
+            <div class="bg-white max-w-[100%] w-[400px] h-[40px] rounded-xl">
+                <div class="bg-yellow-500 w-[100px] h-[40px] rounded-xl"></div>
+            </div>
+        </div>
+        <div id="loading2">
+            <h1 class="text-yellow-500 text-3xl font-bold text-center">
+                Please Wait
+            </h1>
+            <div class="bg-white max-w-[100%] w-[400px] h-[40px] rounded-xl">
+                <div class="bg-yellow-500 w-[300px] h-[40px] rounded-xl "></div>
+            </div>
+        </div>
+        <div id="loading3">
+            <h1 class="text-yellow-500 text-3xl font-bold text-center">
+                Complete
+            </h1>
+            <div class="bg-white max-w-[100%] w-[400px] h-[40px] rounded-xl">
+                <div class="bg-yellow-500  w-[400px] h-[40px] rounded-xl  "></div>
+            </div>
+        </div>
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+        <!-- Hotel form code  -->
+        <div id="Hotelform">
+            <div class="flex flex-col justify-center">
+                <h1 class=" text-center text-3xl text-yellow-400">WELCOME</h1>
+                <div class="text-center mt-2">
+                    <p id="from"
+                        class="text-center bg-yellow-400 text-blue-900 font-bold rounded-2xl w-[200px] p-1 m-auto">
+                        Provide your name</p>
+                </div>
+                <br>
 
-        </code>
-    </pre>
+            </div>
+            <div id="fill" class="fill">
+                <!-- <form id="form"> -->
+                <label>First name</label> <br>
+                <input type="text"
+                    class="border border-yellow-400 w-[500px] max-w-[100%] rounded-2xl bg-blue-950 text-yellow-400"
+                    id="firstname" placeholder="fill in your name">
+                <p id="error1"></p><br><br>
+                <label>Last name</label> <br>
+                <input type="text" id="lastname"
+                    class="border w-[500px] max-w-[100%] border-yellow-400 rounded-2xl bg-blue-950  text-yellow-400"
+                    placeholder="fill in your last name">
+                <p id="error2"></p><br><br>
+                <div class="text-center">
+                    <button class="but" id="next">Next
+                    </button>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+    <div id="typeOfAccommodation">
+        <div class="flex flex-col justify-center">
+            <div class="flex justify-center items-center">
+                <p id="userName" class="text-center font-semibold mt-4 mb-4"></p>
+            </div>
+            <div class="type mt-5">
+                <div class="text-center flex flex-col justify-center p-3 items-center gap-3">
+                    <h4 class="text-center mb-4 font-extrabold mt-4 text-2xl">Types of Accommodation</h4>
+                    <button id="freeAcc" class="mb-2">
+                        Free Accommodation
+                    </button>
+                    <button id="hotelAcc">
+                        Hotel Accommodation
+                    </button><br><br>
+                </div>
+            </div>
+            <button id="accBack" class="rounded mt-4">Back </button>
+        </div>
+    </div>
+    <div id="forFree">
+        <p id="forFreeContent"></p>
+        <div class="text-center">
+            <button id="forFreeBut">Return back </button>
+        </div>
+    </div>
+    <div id="forHotel" class="m-auto">
+        <div class="flex flex-col justify-center items-center p-4">
+            <p id="forHotelContent1" class="mt-4 text-center"></p>
+            <div class="forHotelContent2 mt-5">
+                <div class="p-4">
+                    <p class="mb-2">How long wiill you be staying with us?</p>
+                    <p class="text-xl">Please,let us know the duration of your stay
+                        so we can serve you better</p>
+                    <div class="forHotelContent3 p-4 flex flex-row gap-4">
+                        <input type="date" id="duration" class="date rounded">
+                        <button id="dateButton" class="choose">Choose</button>
+                    </div>
+                    <p id="myparagraph" class="rounded text-center"></p>
+                </div>
+            </div>
+            <div class="text-center mt-5 bg-yellow-300 rounded p-3">
+                <button id="daysNext" class="rounded text-blue-950">Next</button>
+                <button id="daysBack" class="rounded">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="hotelPart">
+        <div class="flex justify-center items-center">
+            <p id="Name" class="text-center font-semibold mt-4 mb-4"></p>
+        </div>
+        <div id="Room">
+            <h4 class="text-center mb-4 font-extrabold mt-4 text-2xl">Select room type</h4>
+            <div id="roomType" class="flex flex-col justify-center gap-3 ">
+                <button id="Standard">Standard - #5,000 </button>
+                <button id="Emerald">Emerald - #15,000</button>
+                <button id="Supreme">Supreme - #25,000</button>
+                <button id="Presidential">Presdential - #90,000</button>
+            </div>
+            <p id="daysMany" class="bg-yellow-300 text-2xl font-bold mt-{20px}"></p>
+            <div id="howMany rounded">
+                <p id="howDays" class="text-center mt-1"></p>
+            </div>
+            <button id="roomBack" class="mt-3 rounded">
+                back
+            </button>
+        </div>
+    </div>
+    <div id="StandardRoom" style="margin: auto;">
+        <div class="text-center d-flex flex-column justify-content-center align-items-center strc">
+            <div id="StandardRoomC" style="color: yellow;">
 
-    <script src="java_ass9.js"></script>
+            </div>
+            <div class="mt-3">
+                <button id="cancel" class="mx-3">
+                    Cancel
+                </button>
+                <button id="Continue" class="mx-3">
+                    Continue
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div id="ContinueSt" style="margin: auto;">
+        <div class="continuecontent d-flex flex-column justify-content-center align-items-center">
+
+            <p id="ContinueStContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
+
+            </p>
+        </div>
+    </div>
+    <div id="EmeraldRoom" style="margin: auto;">
+        <div class="text-center d-flex flex-column justify-content-center align-items-center erc">
+
+            <div id="EmeraldRoomC" style="color: yellow;">
+
+            </div>
+            <div class="mt-3">
+                <button id="cancelEmerald" class="mx-3">
+                    Cancel
+                </button>
+                <button id="ContinueEmerald" class="mx-3">
+                    Continue
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div id="ContinueEmeraldC" style="margin: auto;">
+        <div class="Emeraldcontent d-flex flex-column justify-content-center align-items-center">
+            <p id="ContinueEmeraldContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
+
+            </p>
+        </div>
+    </div>
+    <div id="SupremeRoom" style="margin: auto;">
+        <div class="text-center d-flex flex-column justify-content-center align-items-center src">
+            <div id="SupremeRoomC" style="color: yellow;">
+
+            </div>
+            <div class="mt-3">
+                <button id="cancelSupreme" class="mx-3">
+                    Cancel
+                </button>
+                <button id="continueSupreme" class="mx-3">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ContinueSupremeC" style="margin: auto;">
+        <div class="Supremecontent d-flex flex-column justify-content-center align-items-center">
+            <p id="ContinueSupremeContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
+
+            </p>
+        </div>
+    </div>
+    <div id="PresidentialRoom" style="margin: auto;">
+        <div class="text-center d-flex flex-column justify-content-center align-items-center prc">
+            <div id="PresidentialRoomC" style="color: yellow;" class="mx-3 text-center">
+
+            </div>
+            <div class="mt-3">
+                <button id="cancelPresidential" class="mx-3">
+                    Cancel
+                </button>
+                <button id="continuePresidential" class="mx-3">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ContinuePresidentialC" style="margin: auto;">
+        <div class="Presidentialcontent d-flex flex-column justify-content-center align-items-center">
+            <p id="ContinuePresidentialContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
+
+            </p>
+        </div>
+    </div>
+    <script src="java_ass18.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

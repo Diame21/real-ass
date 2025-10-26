@@ -4,39 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>LOOPS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+
     <style>
-        .form {
+        body {
             background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
-            margin: auto;
-            margin-top: 30px;
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
             color: white;
+            padding: auto;
+        }
 
+        .ok {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            background: black;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        #box {
+            font-size: 24px;
+            margin: auto;
+            margin: 30px 0;
+            width: 40%;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+            display: inline-block;
+            color: #333;
+        }
+
+        #box2 {
+            font-size: 24px;
+            margin: 30px 0;
+            width: 40%;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+            display: inline-block;
+            color: #333;
+        }
+
+        .bx {
+            background-Color: black;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .brr {
+            background-color: white;
+            color: black;
+            width: 100%;
+            overflow-inline: scroll;
+            box-sizing: border-box;
         }
 
         @media(max-width: 768px) {
@@ -50,12 +76,19 @@
                 box-sizing: border-box;
 
             }
+
+            #box {
+                width: 80%;
+            }
+
+            #box2 {
+                width: 80%;
+            }
         }
     </style>
-
 </head>
 
-<body>
+<body class="gg b" id="body">
     <nav class="bg-black border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -278,77 +311,89 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
 
-    <pre class="brr bg-blue-950 text-white">
+    <!-- REAL CODE  -->
+    <div class="text-center gap-3 p-4">
+        <div id="box">
+            <h1 class="font-bold text-green-800 text-2xl">Password Generator</h1><br>
+            <input type="text" id="getlen" class="p-4"><br><br><br>
+            <button id="generatePassword" class="ok">Generate Password</button>
+            <ul id="theUl"></ul>
+        </div> <br>
+
+
+        <div id="box2">
+            <h1 class="font-bold text-green-900">Hexadecimal Color Generator</h1><br>
+            <div class="flex gap-3">
+                <button id="generateBtn">Generate Color</button><br><br>
+                <button class="bx" id="but" >Clear color</button>
+                <!-- <button onclick="generateColor()" id="but" class="bx"></button> -->
+            </div>
+            <div id="colorBox" class="border p-6 text-white text-center"></div><br>
+        </div>
+    </div>
+
+    <pre class="brr">
         <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+            let passwordCharacter = "123456789!ygsdfhuHSAGCGUZH.()%isbijhjsjBHSC:@93uy7t6fadghbj#ksd"
+            let passwordBut = document.getElementById("generatePassword")
+            let getList = document.getElementById("theUl")
+            let getLength = document.getElementById("getlen")
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+            const generatePassword = (len) => {
+                let passwordGenerated = ''
+                let passwordLength = passwordCharacter.length
+                // console.log(passwordLength);
 
+                for (let b = 0; b < len; b++) {
+                    machineCharacter = Math.floor(Math.random() * passwordLength)
+                    passwordGenerated += passwordCharacter[machineCharacter]
+                }
+
+                //adding the generated password to a list
+                getList.innerHTML += `${passwordGenerated}</li>`
+                console.log(passwordGenerated);
+            }
+                 passwordBut.addEventListener('click', (len) =>{
+                generatePassword(getLength.value)
+
+            })
+
+
+            // color generator 
+            let button = document.getElementById("generateBtn");
+            let box = document.getElementById("colorBox");
+            button.addEventListener("click", () => {
+                const color = generateColor();
+                box.style.backgroundColor = color;
+                box.textContent = `color: ${color}`
+            })
+            const generateColor = () => {
+                const letters = "0123456789ABCDEF"
+                let color = "#"
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            const styling = {
+                backgroundColor: "black",
+                color: "white",
+                borderRadius: "20px",
+                padding: "20px"
+            }
+            const boxStyling = {
+                width: "100%",
+                maxWidth: "300px",
+                borderRadius: "10px",
+                padding: "30px",
+                marginTop: "30px"
+            }
+            Object.assign(box.style, boxStyling)
+            Object.assign(button.style, styling)
         </code>
     </pre>
-
-    <script src="java_ass9.js"></script>
+    <script src="java_ass13.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

@@ -4,55 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>Todo-List</title>
+
+    <link rel="stylesheet" href="java_ass19.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .form {
-            background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
-            margin: auto;
-            margin-top: 30px;
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
-            color: white;
-
-        }
-
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
-        }
-    </style>
-
 </head>
 
 <body>
@@ -278,78 +234,35 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
 
-    <pre class="brr bg-blue-950 text-white">
-        <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+    <!-- Real Code  -->
+    <div class="Todo-List">
+        <input type="text" id="tasktitle" class="tasktitle" placeholder="ADD TASK"><br><br>
+        <div class="timesec">
+            <div>
+                <label for="starttime">Start Time</label>
+                <input type="time" id="starttime">
+            </div>
+            <div>
+                <label for="endtime">End Time</label>
+                <input type="time" id="endtime">
+            </div>
+        </div> <br>
+        <button id="addtask" class="addtask">ADD TASK</button> <br>
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+        <ul id="myul" class="myul">
+            <li>
+                <div class="task-name">Task Name</div>
+                <div class="duration">Duration</div>
+                <div class="manage">Management</div>
+            </li>
+        </ul>
+    </div>
 
-        </code>
-    </pre>
 
-    <script src="java_ass9.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="java_ass19.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>

@@ -4,55 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>Form Validation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="java_ass14.css">
     <style>
-        .form {
-            background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
+        /* h1{
+            text-align: center;
+        }
+        #form {
             margin: auto;
             margin-top: 30px;
+            padding: 30px;
+            background-color: white;
+            width: 60%;
+            height: 80%;
+            border-radius: 20px;
         }
+    
 
-        input {
+        .ok {
             padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
+            font-size: medium;
+            border-radius: 14px;
+            width: 80%;
+            background-color: black;
             color: white;
 
         }
 
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
+        label {
+            color: black;
+            font-weight: 500;
+            font-size: large;
         }
-    </style>
 
+        input {
+            width: 80%;
+            border-radius: 10px;
+            padding: 6px;
+        }
+        .bar{
+            text-align: center;
+            font-weight: 600;
+        }
+        .brr{
+            margin: auto;
+        }
+        .ook {
+            background-color: rgb(20, 122, 240);
+            color: white;
+            padding: 16px;
+            border-radius: 9999px;
+            text-align: center;
+            /* margin-top: 12px; */
+        /* } */
+        /* .m{ */
+        /* margin-right: 80px; */
+        /* }  */
+    </style>
 </head>
 
 <body>
@@ -278,78 +287,68 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
 
-    <pre class="brr bg-blue-950 text-white">
-        <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+    <!-- REAL CODE  -->
+    <!-- <div id="formAll">
+        <form id="form">
+            <label for="username" class="user">Create a Username</label><br>
+            <input type="text" placeholder="username" id="username"><br>
+            <p id="usernameError"></p><br><br>
+            <label for="email" class="mail">Create your Email</label><br>
+            <input type="email" placeholder="email" id="email"><br>
+            <p id="emailError"></p><br><br>
+            <label for="password" class="pass">Create a Password</label><br>
+            <input type="password" placeholder="password" id="password"><br>
+            <p id="passwordError"></p><br><br>
+            <button id="myBtn" class="ok">Create my account</button>
+        </form>
+    </div>
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+    <div>
+        <div id="formSubmitted">
+            <h1 id="submitted" class="relative top-28 p-8">You've successfully submitted</h1>
+            <button id="return" class="border bg-blue-500 text-white p-5 rounded" >Return Back</button>
+        </div>
+    </div> -->
+    <div id="formAll" class="mx-5 justify-content-center">
+        <h1 class="text-center text-4xl font-bold">Create Your Account</h1>
+        <form id="form" class="p-4">
+            <div class="d-flex flex-column">
+                <label>Create your email</label>
+                <input type="text" id="email" class="rounded border border-black" placeholder="input your email" />
+                <p id="errorEmail"></p>
+            </div><br>
+            <div class="d-flex flex-column">
+                <label>Create a Username</label>
+                <input type="text" id="userName" class="rounded border border-black" placeholder="username" />
+                <p id="errorUserName"></p>
+            </div><br>
+            <div class="d-flex flex-column">
+                <label>Create a password</label>
+                <input type="text" id="passWord" class="rounded border border-black"
+                    placeholder="input your password" />
+                <p id="errorPassWord"></p>
+            </div><br>
+            <ul>
+                <li id="small" style="list-style-type:disc;">Small Letter</li>
+                <li id="caps" style="list-style-type:disc;">Capital Letter</li>
+                <li id="num" style="list-style-type:disc;">Number</li>
+                <li id="syms" style="list-style-type:disc;">Symbol</li>
+            </ul>
+            <button id="myBtn" type="submit" class="ok">Create an account</button>
+        </form>
+    </div>
 
-        </code>
-    </pre>
+    <div class="container brr" id="formSubmitted">
+        <div class="relative top-28 p-8">
+            <h1 id="submitted" class="bar mt-5 text-4xl font-bold ">You've Successfully Submitted!</h1>
+            <button id="goBack" class="ook bg-blue-500 mt-3 rounded p-4">Return Back To Your Form</button>
+        </div>
+    </div>
 
-    <script src="java_ass9.js"></script>
+    <script src="java_ass14.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>

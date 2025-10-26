@@ -4,54 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>Uber</title>
+    <link rel="stylesheet" href="java_ass17.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .form {
-            background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
-            margin: auto;
-            margin-top: 30px;
-        }
 
-        input {
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
-            color: white;
-
-        }
-
-        @media(max-width: 768px) {
-            body {
-                padding: auto;
-            }
-
-            .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
-            }
-        }
-    </style>
 
 </head>
 
@@ -278,77 +235,97 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
+    <!-- Real code  -->
+    <div class="allbox">
+        <div class="uber">
+            <div class="overlay"></div>
+            <div id="content">
 
-    <pre class="brr bg-blue-950 text-white">
-        <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+                <h1 class="text-start">
+                    UBER
+                </h1>
+                <div id="bookride" class="bookride">
+                    <p>
+                        Book a Ride
+                    </p> <br>
+                    <form id="form">
+                        <label>From :</label>
+                        <input type="text" id="from"><br>
+                        <label>To :</label>
+                        <input type="text" id="to"><br><br>
+                        <button type="submit">Book Ride
+                            <span class="fa fa-arrow-right"></span>
+                        </button>
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+                    </form>
 
-        </code>
-    </pre>
+                </div>
+            </div>
 
-    <script src="java_ass9.js"></script>
+            <div id="infoBox" class="infoBox">
+                <div id="Info" class="Info">
+
+                </div><br><br><br><br>
+                <div>
+                    <button id="cancelride">CANCEL
+                        <span class="fa fa-ban"></span>
+                    </button>
+                    <button id="startride">START RIDE
+                        <span class="fa fa-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="stopWatch" class="stopWatch">
+                <div>
+                    <span id="mins">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                </div>
+                <div id="wish">
+
+                </div><br><br><br>
+                <div>
+                    <button id="continue">CONTINUE RIDE</button>
+                    <button id="pauseCount" style="display: none;">PAUSE RIDE</button>
+                    <button id="stopCount" style="display: none;">STOP RIDE</button>
+                </div>
+            </div>
+
+            <div id="receiptBox" class="receiptBox">
+                <div id="rideEnds">
+                    Ride Has Ended
+                </div><br>
+                <span class="fa-regular fa-circle-check text-white text-7xl"></span><br><br>
+                <div class="box">
+                    <table cellpadding="10" id="receipt" class="receipt">
+                        <tr>
+                            <td>Time Taken</td>
+                            <td id="time"></td>
+                        </tr>
+                        <tr>
+                            <td>Time Fare</td>
+                            <td id="timefare"></td>
+                        </tr>
+                        <tr>
+                            <td>Bus Fare</td>
+                            <td id="busfare"></td>
+                        </tr>
+                        <tr>
+                            <td>TAX (10%)</td>
+                            <td id="tax"></td>
+                        </tr>
+                        <tr>
+                            <td>Total Amount</td>
+                            <td id="totalpayment"></td>
+                        </tr>
+                    </table> <br>
+                    <button id="payment" class="but">Make payment</button> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="java_ass17.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

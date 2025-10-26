@@ -39,17 +39,17 @@ function Retirement() {
     const age = parseInt(document.getElementById("age").value);
     let retirementAge = 60;
     let yearsLeft = retirementAge - age;
-    let yearsdelayed = age - retirementAge
+    let yearsdelayed = age - retirementAge;
     let message;
 
     if (age < retirementAge) {
-        result = (`You're ${age} years now and you have ${ yearsLeft } years left to retire.`)
+        result = (`You're ${age} years now and you have ${ yearsLeft} year(s) left to retire.`)
     }
     else if(age === 60){
         result = ("You would be retiring this year")
     }
     else if (age > retirementAge){
-        result = (`You're ${age} years of age and you should have retired ${yearsdelayed} years ago`)
+        result = (`You're ${age} years of age and you should have retired ${yearsdelayed} year(s) ago`)
     }
     else {
         result = ("Input a number")
@@ -57,8 +57,3 @@ function Retirement() {
 
     document.getElementById("retireResult").textContent = result;
 }
-
-
-
-
-

@@ -4,39 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Repayment App</title>
+    <title>Set Interval</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        .form {
-            background-color: blue;
-            width: 350px;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: -10px -6px 50px white;
-            margin: auto;
-            margin-top: 30px;
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            height: 40px;
-            font-size: 20px;
-            font-weight: 400;
-
-
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        p {
-            font-size: 18px;
+        .countdown {
+            font-size: 60px;
+            background-color: transparent;
             color: white;
+            width: fit-content;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+        }
 
+        .brr {
+            margin-top: 100px;
+            margin-left: 500px;
+            background-color: green;
+            display: inline-block;
         }
 
         @media(max-width: 768px) {
@@ -45,14 +31,12 @@
             }
 
             .brr {
-                width: 100%;
-                overflow-x: scroll;
-                box-sizing: border-box;
-
+                margin-left: 20px;
             }
+
+
         }
     </style>
-
 </head>
 
 <body>
@@ -278,77 +262,18 @@
         </div>
     </nav><br><br>
 
-    <!-- REAL code  -->
-    <div class="form">
-        <div class="flex flex-row gap-6">
-            <input type="text" name="" id="loanAmount" placeholder="Amount">
-            <select name="" id="months" placeholder="Duration">
-                <option value="Duration">Duration</option>
-                <option value="1" id="months">1 month</option>
-                <option value="2" id="months">2 months</option>
-                <option value="3" id="months">3 months</option>
-                <option value="4" id="months">4 months</option>
-                <option value="5" id="months">5 months</option>
-                <option value="5" id="months">6 months</option>
-                <option value="5" id="months">7 months</option>
-                <option value="5" id="months">8 months</option>
-                <option value="5" id="months">9 months</option>
-                <option value="5" id="months">10 months</option>
-                <option value="5" id="months">11 months</option>
-                <option value="5" id="months">12 months</option>
-            </select>
-        </div> <br><br>
-        <button onclick="Repay()" class="bg-black text-white  w-[50%] h-[50px] rounded-full p-[2px] border">Calculate
-            interest</button>
-        <p id="calculate"></p>
-    </div> <br><br><br>
 
-    <pre class="brr bg-blue-950 text-white">
-        <code>
-            const calculate = document.getElementById("calculate")
-            const Repay = () => {
-            const loanAmount = Number(document.getElementById("loanAmount").value);
-            const getMonths = Number(document.getElementById("months").value);
-            
-            // A monthlyRIO of 15% = 0.15
-            const monthlyRIO = 0.15
-            const monthlyRepayment = loanAmount * monthlyRIO;
-            const totalRepayment = loanAmount + (monthlyRepayment * getMonths)
+    <h1 class="text-2xl font-bold p-3">SET INTERVAL AND SET TIMEOUT</h1> <br><br>
+    <div class="brr p-3">
+        <h1 class="countdown" id="countdown">70</h1><br>
+        <button id="start" class="text-3xl bg-black text-white w-fit p-1 rounded-xl">Start</button>
+        <button id="stop" class="text-3xl bg-black text-white w-fit p-1 rounded-xl">Pause</button>
+        <button id="continued" class="text-3xl bg-black text-white w-fit p-1 rounded-xl">Continue</button>
+        <button id="reset" class="text-3xl bg-black text-white w-fit p-1 rounded-xl">Reset</button>
+    </div>
 
-            if (isNaN(loanAmount) || loanAmount === "" || isNaN(getMonths)) {
-                calculate.textContent = 'Please,input a valid amount'
-                return;
-            }  
-            else if(getMonths === 1){
-                const totalAmount = loanAmount + monthlyRepayment 
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month`
-            }  
-            else if(getMonths === 2){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 3){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 4){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-            else if(getMonths === 5){
-                const totalAmount = totalRepayment
-                const newTotalAmount = totalAmount / getMonths
-                calculate.textContent = `You're expected to return ${totalAmount} in ${getMonths} month and installmentally pay ${newTotalAmount} each month till ${getMonths} months is completed`
-            }  
-        }
+    <script src="java_ass16.js"></script>
 
-        </code>
-    </pre>
-
-    <script src="java_ass9.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
