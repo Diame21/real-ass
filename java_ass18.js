@@ -7,6 +7,7 @@ let hotelForm = document.getElementById("Hotelform")
 let hotelIntro = document.getElementById("Firsthotel")
 let nextPage = document.getElementById("next")
 let User = document.getElementById("userName")
+let dayle = document.getElementById("myparagraph")
 let typeOfAccomodation = document.getElementById("typeOfAccommodation")
 let freeAccommodation = document.getElementById("freeAcc")
 let hotelAccommodation = document.getElementById("hotelAcc")
@@ -20,40 +21,21 @@ let forFreeButton = document.getElementById("forFreeBut")
 let forHotel = document.getElementById("forHotel")
 let forHotelContent = document.getElementById("forHotelContent1")
 let daysNext = document.getElementById("daysNext")
-let howDays = document.getElementById("howDays")
-let Standard = document.getElementById("Standard")
-let StandardRoomC = document.getElementById("StandardRoomC")
-let EmeraldRoomC = document.getElementById("EmeraldRoomC")
-let StandardRoom = document.getElementById("StandardRoom")
-let EmeraldRoom = document.getElementById("EmeraldRoom")
-let Continue = document.getElementById("Continue")
-let cancel = document.getElementById("cancel")
-let cancelEmerald = document.getElementById("cancelEmerald")
-let ContinueSt = document.getElementById("ContinueSt")
-let ContinueEmeraldC = document.getElementById("ContinueEmeraldC")
-let ContinueStContent = document.getElementById("ContinueStContent")
-let ContinueEmeraldContent = document.getElementById("ContinueEmeraldContent")
-let Emerald = document.getElementById("Emerald")
-let Supreme = document.getElementById("Supreme")
-let ContinueEmerald = document.getElementById("ContinueEmerald")
-let SupremeRoom = document.getElementById("SupremeRoom")
-let PresidentialRoom = document.getElementById("PresidentialRoom")
-let SupremeRoomC = document.getElementById("SupremeRoomC")
-let ContinueSupremeC = document.getElementById("ContinueSupremeC")
-let ContinuePresidentialC = document.getElementById("ContinuePresidentialC")
-let PresidentialRoomC = document.getElementById("PresidentialRoomC")
-let continueSupreme = document.getElementById("continueSupreme")
-let continuePresidential = document.getElementById("continuePresidential")
-let ContinueSupremeContent = document.getElementById("ContinueSupremeContent")
-let ContinuePresidentialContent = document.getElementById("ContinuePresidentialContent")
-let cancelSupreme = document.getElementById("cancelSupreme")
-let cancelPresidential = document.getElementById("cancelPresidential")
-let Presidential = document.getElementById("Presidential")
-let daysMany = document.getElementById("daysMany")
-let returnToHome = document.getElementById("forFreeBut")
-let daysBack = document.getElementById("daysBack")
-let roomBack = document.getElementById("roomBack")
+let howDays = document.getElementById("days")
+let standard = document.getElementById("Standard")
+let emerald = document.getElementById("Emerald")
+let supreme = document.getElementById("Supreme")
+let presidential = document.getElementById("Presidential")
 let accBack = document.getElementById("accBack")
+let value = document.getElementById("value1")
+let valueTwo = document.getElementById("value2")
+let valueThree = document.getElementById("value3")
+let valueFour= document.getElementById("value4")
+let calc = document.getElementById("calc")
+let calc2 = document.getElementById("calc2")
+let calc3 = document.getElementById("calc3")
+let calc4 = document.getElementById("calc4")
+// let forPaidButton = document.getElementById("forPaid")
 // let textPattern = /[A-Za-z]/
 laoding.style.display = "none"
 pleaseWait.style.display = "none"
@@ -64,19 +46,8 @@ typeOfAccomodation.style.display = "none"
 forFree.style.display = "none"
 hotelAccPage.style.display = "none"
 forHotel.style.display = "none"
-typeOfRoom.style.display = "none"
-StandardRoom.style.display = "none"
-EmeraldRoom.style.display = "none"
-SupremeRoom.style.display = "none"
-PresidentialRoom.style.display = "none"
-ContinueSt.style.display = "none"
-ContinueEmeraldC.style.display = "none"
-ContinueSupremeC.style.display = "none"
-ContinuePresidentialC.style.display = "none"
-cancelSupreme.style.display = "none"
-cancelPresidential.style.display = "none"
-continueSupreme.style.display = "none"
-continuePresidential.style.display = "none"
+
+
 
 //Code for the Intro part
 // setTimeout(() => {
@@ -152,7 +123,7 @@ nextPage.addEventListener("click", () => {
 freeAccommodation.addEventListener("click", () => {
     forFree.style.display = "block"
     typeOfAccomodation.style.display = "none"
-    forFreeContent.textContent = `Dear ${first} ${last}, thank you for selecting a 
+    forFreeContent.textContent = `Dear ${first} ${last}, thank you for selecting
     free accommodation,our staff wll get you the available room soon.`
 })
 forFreeButton.addEventListener("click", () => {
@@ -161,9 +132,15 @@ forFreeButton.addEventListener("click", () => {
     hotelForm.style.display = "none"
     User.textContent = `${first} ${last}`
 })
+// forPaidButton.addEventListener("click", () => {
+//     typeOfAccomodation.style.display = "none"
+//     forFree.style.display = "none"
+//     hotelForm.style.display = "block"
+//     User.textContent = `${first} ${last}`
+// })
 
 let days;
-let dayle;
+// let dayle;
 let hours;
 let mins;
 let secs;
@@ -172,262 +149,300 @@ hotelAccommodation.addEventListener("click", () => {
     forHotelContent.textContent = `${first} ${last}`
     forHotel.style.display = "block"
     typeOfAccomodation.style.display = "none"
-    const futureCountDown = (futuredate) => {
-        let future = new Date(futuredate).getTime()
-        let now = new Date().getTime()
-        let diff = future - now
-        let realDays = 24 * 60 * 60 * 1000;
-        let realHours = 60 * 60 * 1000;
-        let realMins = 60 * 1000;
-        let realSecs = 1000;
 
-        days = Math.floor(diff / realDays)
-        hours = Math.floor((diff % realDays) / realHours)
-        mins = Math.floor((diff % realHours) / realMins)
-        secs = Math.floor((diff % realMins) / realSecs)
-        dayle = document.getElementById("myparagraph")
+})
+const futureCountDown = (futuredate) => {
+    let future = new Date(futuredate).getTime()
+    let now = new Date().getTime()
+    let diff = future - now
+    let realDays = 24 * 60 * 60 * 1000;
+    let realHours = 60 * 60 * 1000;
+    let realMins = 60 * 1000;
+    let realSecs = 1000;
 
+    days = Math.floor(diff / realDays)
+    hours = Math.floor((diff % realDays) / realHours)
+    mins = Math.floor((diff % realHours) / realMins)
+    secs = Math.floor((diff % realMins) / realSecs)
+    // dayle = document.getElementById("myparagraph")
+
+}
+accBack.addEventListener("click", () => {
+    typeOfAccomodation.style.display = "none"
+    forFree.style.display = "none"
+    hotelForm.style.display = "block"
+    User.textContent = `${first} ${last}`
+})
+
+
+let duration = document.getElementById("duration")
+daysNext.addEventListener("click", () => {
+    if (duration.value.trim() !== '') {
+        hotelAccPage.style.display = 'block'
+        forHotel.style.display = 'none'
     }
+    else {
+        duration.style.border = '4px solid red'
+        duration.focus()
+    }
+    userName2.textContent = `${first} ${last}`
+})
 
-    document.getElementById("dateButton").addEventListener("click", () => {
-        setInterval(() => {
-            let realTime = document.getElementById("duration").value
-            futureCountDown(realTime)
-            if (days > 0) {
-                dayle.textContent = `Ok ${first} ${last} you will be staying with us ${days}Days and ${hours} hours`
-                daysMany.textContent = "how many days"
-            }
-            else if (hours > 0) {
-                dayle.textContent = `Ok ${first} ${last} you will be staying with us for ${hours} hours`
-                daysMany.textContent = "how many days"
-            }
-            else if (days > 0 || hours < 0 || dayle.textContent === "") {
-                dayle.textContent = "you have to choose a valid date to proceed"
-            }
-            console.log(`${days}days : ${hours}hours : ${mins}minutes : ${secs}seconds`);
-        })
-        // standard time countDown
-        if (days > 1 && hours > 1) {
-            ContinueStContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days < 1) {
-            ContinueStContent.textContent = `${firstName} ${lastName} your rents expire in ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days > 1) {
-            ContinueStContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
+let stand = document.getElementById("stand")
+standard.addEventListener("click", () => {
+    const daysValue = howDays.value.trim();
+    const daysAsNumber = Number(daysValue);
 
+    if (daysValue === '' || isNaN(daysAsNumber)) {
+        howDays.style.border = '4px solid red';
+        howDays.value = '';
+        howDays.placeholder = 'Please enter a valid number';
+        howDays.focus();
+        setTimeout(() => {
+            howDays.style.border = '2px solid black';
+            howDays.placeholder = 'e.g 3';
+        }, 1200);
+        return;
+    }
+    else {
+        value.textContent = daysAsNumber;
+        // calc.textContent = daysAsNumber * 5000;
+        userRoom.style.display = 'none'
+        stand.style.display = 'block'
+        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
+        calc.textContent = daysAsNumber * 5000;
+    }
+})
 
-        // emerald time countDown
-        if (days > 1 && hours > 1) {
-            ContinueEmeraldContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days < 1) {
-            ContinueEmeraldContent.textContent = `${firstName} ${lastName} your rents expire in ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days > 1) {
-            ContinueEmeraldContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
+let eme = document.getElementById("emer")
+emerald.addEventListener("click", () => {
+    const daysValue = howDays.value.trim();
+    const daysAsNumber = Number(daysValue);
 
+    if (daysValue === '' || isNaN(daysAsNumber)) {
+        howDays.style.border = '4px solid red';
+        howDays.value = '';
+        howDays.placeholder = 'Please enter a valid number';
+        howDays.focus();
+        setTimeout(() => {
+            howDays.style.border = '2px solid black';
+            howDays.placeholder = 'e.g 3';
+        }, 1200);
+        return;
+    }
+    else {
+        valueTwo.textContent = daysAsNumber;
+        // calc.textContent = daysAsNumber * 15000;
+        userRoom.style.display = 'none'
+        eme.style.display = 'block'
+        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
+        calc2.textContent = daysAsNumber * 15000;
+    }
+    // userRoom.style.display = 'none'
+    // eme.style.display = 'block'
+})
+let sup = document.getElementById("sup")
+supreme.addEventListener("click", () => {
+    const daysValue = howDays.value.trim();
+    const daysAsNumber = Number(daysValue);
 
-        // supreme time countdown 
-        if (days > 1 && hours > 1) {
-            ContinueSupremeContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days < 1) {
-            ContinueSupremeContent.textContent = `${firstName} ${lastName} your rents expire in ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days > 1) {
-            ContinueSupremeContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
+    if (daysValue === '' || isNaN(daysAsNumber)) {
+        howDays.style.border = '4px solid red';
+        howDays.value = '';
+        howDays.placeholder = 'Please enter a valid number';
+        howDays.focus();
+        setTimeout(() => {
+            howDays.style.border = '2px solid black';
+            howDays.placeholder = 'e.g 3';
+        }, 1200);
+        return;
+    }
+    else {
+        valueThree.textContent = daysAsNumber;
+        // calc.textContent = daysAsNumber * 5000;
+        userRoom.style.display = 'none'
+        sup.style.display = 'block'
+        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
+        calc3.textContent = daysAsNumber * 25000;
+    }
+    // userRoom.style.display = 'none'
+    // sup.style.display = 'block'
+})
+let president = document.getElementById("pre")
+presidential.addEventListener("click", () => {
+    const daysValue = howDays.value.trim();
+    const daysAsNumber = Number(daysValue);
 
+    if (daysValue === '' || isNaN(daysAsNumber)) {
+        howDays.style.border = '4px solid red';
+        howDays.value = '';
+        howDays.placeholder = 'Please enter a valid number';
+        howDays.focus();
+        setTimeout(() => {
+            howDays.style.border = '2px solid black';
+            howDays.placeholder = 'e.g 3';
+        }, 1200);
+        return;
+    }
+    else {
+        valueFour.textContent = daysAsNumber;
+        // calc.textContent = daysAsNumber * 5000;
+        userRoom.style.display = 'none'
+        pre.style.display = 'block'
+        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
+        calc4.textContent = daysAsNumber * 90000;
+    }
+    // userRoom.style.display = 'none'
+    // sup.style.display = 'block'
+})
 
-        // presidential time countdown
-        if (days > 1 && hours > 1) {
-            ContinuePresidentialContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days < 1) {
-            ContinuePresidentialContent.textContent = `${firstName} ${lastName} your rents expire in ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-        else if (days > 1) {
-            ContinuePresidentialContent.textContent = `${firstName} ${lastName} your rents expire in ${days} days: ${hours} hours: ${mns} minutes: ${secs} seconds`
-        }
-    }, 1000);
+// For standard 
+let cancel = document.getElementById("Cancel1")
+cancel.addEventListener("click", () => {
+    hotelAccPage.style.display = 'block'
+    userRoom.style.display = 'block'
+    stand.style.display = 'none'
+    eme.style.display = 'none'
+    sup.style.display = 'none'
+    pre.style.display = 'none'
+    howDays.value = ''
+    howDays.focus()
+})
 
-
-
-    daysNext.addEventListener("click", () => {
-        if (days > 0 || hours < 0 || dayle.textContent === "") {
-            dayle.textContent = "you have to choose a valid date to proceed "
+let continueBtns = document.getElementById("Continue1")
+continueBtns.addEventListener("click", () => {
+    hotelAccPage.style.display = "none"
+    counter.style.display = 'block';
+    const daysValue = Number(howDays.value.trim());
+    const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
+    let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
+    let timer = setInterval(() => {
+        let now = new Date().getTime();
+        let diff = future - now;
+        if (diff <= 0) {
+            clearInterval(timer);
+            document.getElementById("display").textContent = "Your booking period has ended!";
             return;
         }
+        let daysLeft = Math.floor(diff / (24 * 60 * 60 * 1000));
+        let hours = Math.floor((diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        let mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        let secs = Math.floor((diff % (60 * 1000)) / 1000);
 
-        hotelAccPage.style.display = "block"
-        forHotel.style.display = "none"
-        typeOfRoom.textContent = `${first} ${last}`
-        if (days > 0 && hours > 0) {
-            howDays.textContent = `${days}days ${hours}hours`
+        document.getElementById("display").textContent =
+            `${daysLeft}d : ${hours}h : ${mins}m : ${secs}s`;
+
+    }, 1000);
+})
+
+// for emerald 
+let cancelTwo = document.getElementById("Cancel2")
+cancelTwo.addEventListener("click", () => {
+    hotelAccPage.style.display = 'block'
+    userRoom.style.display = 'block'
+    stand.style.display = 'none'
+    eme.style.display = 'none'
+    sup.style.display = 'none'
+    pre.style.display = 'none'
+    howDays.value = ''
+    howDays.focus()
+})
+let continueBtnsTwo = document.getElementById("Continue2")
+continueBtnsTwo.addEventListener("click", () => {
+    hotelAccPage.style.display = "none"
+    counter.style.display = 'block';
+    const daysValue = Number(howDays.value.trim());
+    const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
+    let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
+    let timer = setInterval(() => {
+        let now = new Date().getTime();
+        let diff = future - now;
+        if (diff <= 0) {
+            clearInterval(timer);
+            document.getElementById("display").textContent = "Your booking period has ended!";
+            return;
         }
-        else if (days > 0) {
-            howDays.textContent = `${days}days`
+        let daysLeft = Math.floor(diff / (24 * 60 * 60 * 1000));
+        let hours = Math.floor((diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        let mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        let secs = Math.floor((diff % (60 * 1000)) / 1000);
+
+        document.getElementById("display").textContent =
+            `${daysLeft}d : ${hours}h : ${mins}m : ${secs}s`;
+
+    }, 1000);
+})
+// for supreme 
+let cancelThree = document.getElementById("Cancel3")
+cancelThree.addEventListener("click", () => {
+    hotelAccPage.style.display = 'block'
+    userRoom.style.display = 'block'
+    stand.style.display = 'none'
+    eme.style.display = 'none'
+    sup.style.display = 'none'
+    pre.style.display = 'none'
+    howDays.value = ''
+    howDays.focus()
+})
+let continueBtnsThree = document.getElementById("Continue3")
+continueBtnsThree.addEventListener("click", () => {
+    hotelAccPage.style.display = "none"
+    counter.style.display = 'block';
+    const daysValue = Number(howDays.value.trim());
+    const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
+    let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
+    let timer = setInterval(() => {
+        let now = new Date().getTime();
+        let diff = future - now;
+        if (diff <= 0) {
+            clearInterval(timer);
+            document.getElementById("display").textContent = "Your booking period has ended!";
+            return;
         }
-        else if (hours > 0) {
-            howDays.textContent = `${hours}hours`
+        let daysLeft = Math.floor(diff / (24 * 60 * 60 * 1000));
+        let hours = Math.floor((diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        let mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        let secs = Math.floor((diff % (60 * 1000)) / 1000);
+
+        document.getElementById("display").textContent =
+            `${daysLeft}d : ${hours}h : ${mins}m : ${secs}s`;
+
+    }, 1000);
+})
+// for presidential 
+let cancelFour = document.getElementById("Cancel4")
+cancelFour.addEventListener("click", () => {
+    hotelAccPage.style.display = 'block'
+    userRoom.style.display = 'block'
+    stand.style.display = 'none'
+    eme.style.display = 'none'
+    sup.style.display = 'none'
+    pre.style.display = 'none'
+    howDays.value = ''
+    howDays.focus()
+})
+let continueBtnsFour = document.getElementById("Continue4")
+continueBtnsFour.addEventListener("click", () => {
+    hotelAccPage.style.display = "none"
+    counter.style.display = 'block';
+    const daysValue = Number(howDays.value.trim());
+    const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
+    let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
+    let timer = setInterval(() => {
+        let now = new Date().getTime();
+        let diff = future - now;
+        if (diff <= 0) {
+            clearInterval(timer);
+            document.getElementById("display").textContent = "Your booking period has ended!";
+            return;
         }
-    })
+        let daysLeft = Math.floor(diff / (24 * 60 * 60 * 1000));
+        let hours = Math.floor((diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        let mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        let secs = Math.floor((diff % (60 * 1000)) / 1000);
+
+        document.getElementById("display").textContent =
+            `${daysLeft}d : ${hours}h : ${mins}m : ${secs}s`;
+
+    }, 1000);
 })
-
-
-Standard.addEventListener("click", () => {
-    typeOfRoom.style.display = "none"
-    StandardRoom.style.display = "block"
-    let perHour = 500 * hours;
-    let perDay = 12000 * days;
-    let perHourPerDay = perDay + perHour
-    if (days > 1 && hours > 1) {
-        StandardRoomC.textContent = `Your [standard] room at [#12,000] per day and [#500] per hour, your bill of expiration of [${days}] days and [${hours}] hours is [#${perHourPerDay}]`
-    }
-    else if (days < 1) {
-        StandardRoomC.textContent = `Your [standard] room at [#500] per hour, your bill of expiration of [${hours}] hours is [#${perHourPerDay}]`
-    }
-    else if (days > 1) {
-
-        StandardRoomC.textContent = `Your [standard] room at [#12,000] per day, your bill of expiration of [${days}] days is [#${perHourPerDay}]`
-    }
-})
-
-
-Continue.addEventListener("click", () => {
-    StandardRoom.style.display = "none"
-    ContinueSt.style.display = "block"
-})
-
-
-cancel.addEventListener("click", () => {
-    StandardRoom.style.display = "none"
-    typeOfRoom.style.display = "block"
-})
-
-
-Emerald.addEventListener("click", () => {
-    typeOfRoom.style.display = "none"
-    EmeraldRoom.style.display = "block"
-    let perHourEmerald = 1000 * hours;
-    let perDayEmerald = 24000 * days;
-    let perHoursPerDAysEmerald = perDayEmerald + perHourEmerald;
-    if (days > 1 && hours > 1) {
-        EmeraldRoomC.textContent = `Your [Emerald] room at [#24,000] per day and [#1000] per hour, your bill of expiration of [${days}] days and [${hours}] hours is [#${perHoursPerDAysEmerald}]`
-    }
-    else if (days < 1) {
-        EmeraldRoomC.textContent = `Your [Emerald] room at [#1000] per hour, your bill of expiration of [${hours}] hours is [#${perHoursPerDAysEmerald}]`
-    }
-    else if (days > 1) {
-
-        EmeraldRoomC.textContent = `Your [Emerald] room at [#24,000] per day, your bill of expiration of [${days}] days is [#${perHoursPerDAysEmerald}]`
-    }
-
-})
-
-
-ContinueEmerald.addEventListener("click", () => {
-    EmeraldRoom.style.display = "none"
-    ContinueEmeraldC.style.display = "block"
-})
-
-
-cancelEmerald.addEventListener("click", () => {
-    EmeraldRoom.style.display = "none"
-    typeOfRoom.style.display = "block"
-})
-
-
-Supreme.addEventListener("click", () => {
-    typeOfRoom.style.display = "none"
-    SupremeRoom.style.display = "block"
-    let perHourSupreme = 2000 * hours;
-    let perDaySupreme = 48000 * days;
-    let perHoursPerDAysSupreme = perDaySupreme + perHourSupreme;
-    if (days > 1 && hours > 1) {
-        SupremeRoomC.textContent = `Your [Supreme] room at [#48,000] per day and [#2000] per hour, your bill of expiration of [${days}] days and [${hours}] hours is [#${perHoursPerDAysSupreme}]`
-    }
-    else if (days < 1) {
-        SupremeRoomC.textContent = `Your [Supreme] room at [#2000] per hour, your bill of expiration of [${hours}] hours is [#${perHoursPerDAysSupreme}]`
-    }
-    else if (days > 1) {
-        SupremeRoomC.textContent = `Your [Supreme] room at [#48,000] per day, your bill of expiration of [${days}] days is [#${perHoursPerDAysSupreme}]`
-    }
-
-})
-
-
-continueSupreme.addEventListener("click", () => {
-    SupremeRoom.style.display = "none"
-    ContinueSupremeC.style.display = "block"
-})
-
-
-cancelSupreme.addEventListener("click", () => {
-    SupremeRoom.style.display = "none"
-    typeOfRoom.style.display = "block"
-})
-
-
-Presidential.addEventListener("click", () => {
-    typeOfRoom.style.display = 'none'
-    PresidentialRoom.style.display = "block"
-    let perHoursPresidential = 4000 * hours;
-    let perdaysPresidential = 96000 * days;
-    let perHoursPerDAysPresidential = perdaysPresidential + perHoursPresidential;
-    if (days > 1 && hours > 1) {
-        PresidentialRoomC.textContent = `Your [Presidential] room at [#96,000] per day and [#4000] per hour, your bill of expiration of [${days}] days and [${hours}] hours is [#${perHoursPerDAysPresidential}]`
-    }
-    else if (days < 1) {
-        PresidentialRoomC.textContent = `Your [Presidential] room at [#4000] per hour, your bill of expiration of [${hours}] hours is [#${perHoursPerDAysPresidential}]`
-    }
-    else if (days > 1) {
-        PresidentialRoomC.textContent = `Your [Presidential] room at [#96,000] per day, your bill of expiration of [${days}] days is [#${perHoursPerDAysPresidential}]`
-    }
-
-})
-
-
-continuePresidential.addEventListener("click", () => {
-    PresidentialRoom.style.display = "none"
-    ContinuePresidentialC.style.display = "block"
-})
-
-
-cancelPresidential.addEventListener("click", () => {
-    PresidentialRoom.style.display = "none"
-    typeOfRoom.style.display = "block"
-})
-
-
-returnToHome.addEventListener("click", () => {
-    hotelForm.style.display = "block"
-    forFree.style.display = 'none'
-})
-
-
-
-
-
-returnToHome.addEventListener("click", () => {
-    typeOfAccomodation.style.display = "block"
-    forFree.style.display = 'none'
-})
-daysBack.addEventListener("click", ()=>{
-    typeOfAccomodation.style.display = "block"
-    forHotel.style.display = "none"
-})
-roomBack.addEventListener("click", ()=>{
-    typeOfRoom.style.display = "none"
-    forHotel.style.display = "block"
-})
-accBack.addEventListener("click", ()=>{
-    typeOfAccomodation.style.display = "none"
-    hotelForm.style.display = "block"
-})
-
-
-

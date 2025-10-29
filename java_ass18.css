@@ -1,260 +1,345 @@
-/* .allbox { */
-/* background-color: rgb(15, 15, 59); */
-/* width: fit-content; */
-/* } */
+ /* .allbox { 
+ background-color: rgb(15, 15, 59); 
+ width: fit-content; 
+ }  */
 
-#Hotelform {
-    background-color: rgb(31, 7, 92);
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%);
-}
+ #Hotelform {
+     background-color: rgb(31, 7, 92);
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%);
+ }
 
-#loading1,
-#loading2,
-#loading3 {
-    /* background-color: rgb(31, 7, 92); */
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%);
-}
+ #loading1,
+ #loading2,
+ #loading3 {
+     /* background-color: rgb(31, 7, 92); */
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%);
+ }
 
-#Firsthotel {
-    /* display: grid; */
-    /* place-items: center; */
-    background-color: rgb(31, 7, 92);
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 30%;
-    bottom: 40%;
-    transform: translate(50%, 50%);
+ #Firsthotel {
+     /* display: grid; */
+     /* place-items: center; */
+     background-color: #1f075c;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 35%;
+     bottom: 40%;
+     transform: translate(50%, 50%);
 
-}
+ }
 
-#Hotelform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-}
+ #Hotelform {
+     display: flex;
+     flex-direction: column;
+     justify-content: center
+ }
 
-label {
-    color: rgb(247, 247, 10);
-}
+ label {
+     color: #f7f70a;
+ }
 
-#fill>input {
-    padding: 10px;
-}
+ #fill>input {
+     padding: 10px;
+ }
 
-.but {
-    background-color: rgb(250, 204, 21);
-    width: 40%;
-    padding: 10px;
-    border-radius: 16px;
-    color: rgb(31, 7, 92);
-}
+ .but {
+     background-color: rgb(250, 204, 21);
+     width: 40%;
+     padding: 10px;
+     border-radius: 16px;
+     color: rgb(31, 7, 92);
+ }
 
-#Firsthotel {
-    animation: shake 2000ms infinite alternate-reverse;
-}
+ #Firsthotel {
+     animation: shake 2000ms infinite alternate-reverse;
+ }
 
-@keyframes shake {
-    0% {
-        transform: scale(1);
-    }
+ @keyframes shake {
+     0% {
+         transform: scale(1);
+     }
 
-    100% {
-        transform: scale(1.2);
-    }
-}
+     100% {
+         transform: scale(1.2);
+     }
+ }
 
-#typeOfAccommodation {
-    background-color: rgb(31, 7, 92);
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%);
-}
+ #typeOfAccommodation {
+     background-color: rgb(31, 7, 92);
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%);
+ }
 
-.type {
-    background-color: rgb(224, 224, 6);
-    color: black;
-    border-radius: 10px;
+ .type {
+     background-color: rgb(224, 224, 6);
+     color: black;
+     border-radius: 10px;
 
-}
+ }
 
-#freeAcc,
-#hotelAcc {
-    background-color: rgb(31, 7, 92);
-    color: rgb(224, 224, 6);
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: 600;
-}
+ #freeAcc,
+ #hotelAcc {
+     background-color: rgb(31, 7, 92);
+     color: rgb(224, 224, 6);
+     border-radius: 10px;
+     padding: 10px;
+     font-weight: 600;
+ }
 
-#userName {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ #userName {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-#forFree {
-    background-color: rgb(31, 7, 92);
-    font-size: 28px;
-    font-weight: 700;
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%)
-}
+ #forFree {
+     background-color: rgb(31, 7, 92);
+     font-size: 28px;
+     font-weight: 700;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%)
+ }
 
-#hotelPart {
-    background-color: rgb(31, 7, 92);
-    font-size: 28px;
-    font-weight: 700;
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%)
-}
+ #hotelPart {
+     background-color: rgb(31, 7, 92);
+     font-size: 28px;
+     font-weight: 700;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 40%;
+     transform: translate(50%, 50%)
+ }
 
-#Room {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: 600;
-}
+ .style {
+     background-color: rgb(31, 7, 92);
+     font-size: 28px;
+     font-weight: 700;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%)
+ }
 
-#roomType>button {
-    background-color: rgb(31, 7, 92);
-    color: rgb(224, 224, 6);
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: 600;
-    margin: 10px;
-}
+ #Room {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 10px;
+     font-weight: 600;
+ }
 
-#Name {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ #roomType>button {
+     background-color: rgb(31, 7, 92);
+     color: rgb(224, 224, 6);
+     border-radius: 10px;
+     padding: 10px;
+     font-weight: 600;
+     margin: 10px;
+ }
 
-#forFreeBut {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-    width: 25%;
-    align-items: center;
+ #Name {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-}
+ #forFreeBut {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+     width: 25%;
+     align-items: center;
 
-#forHotel {
-    background-color: rgb(31, 7, 92);
-    font-size: 28px;
-    font-weight: 700;
-    backdrop-filter: blur(5px);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    padding: 40px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%)
-}
+ }
 
-#forHotelContent1 {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ #forHotel {
+     background-color: rgb(31, 7, 92);
+     font-size: 28px;
+     font-weight: 700;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%)
+ }
 
-.forHotelContent2 {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ #forHotelContent1 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-.forHotelContent3 {
-    background-color: rgb(31, 7, 92);
-    color: rgb(224, 224, 6);
-    border-radius: 10px;
-    padding: 5px;
-}
+ .forHotelContent2 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-.date {
-    background-color: rgb(31, 7, 92);
-    color: rgb(224, 224, 6);
-    border: none;
-    box-shadow: 0px 0px 3px 3px rgb(91, 91, 235);
-}
+ .forHotelContent3 {
+     background-color: rgb(31, 7, 92);
+     color: rgb(224, 224, 6);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-.choose {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ .date {
+     background-color: rgb(31, 7, 92);
+     color: rgb(224, 224, 6);
+     border: none;
+     box-shadow: 0px 0px 3px 3px rgb(91, 91, 235);
+ }
 
-#cancelSupreme {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ .choose {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
 
-#continueSupreme {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
-#cancelPresidential {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
-#continuePresidential {
-    background-color: rgb(224, 224, 6);
-    color: rgb(31, 7, 92);
-    border-radius: 10px;
-    padding: 5px;
-}
+ #Cancel1 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Cancel2 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Cancel3 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Cancel4 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Continue1 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Continue2 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Continue3 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #Continue4 {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     border-radius: 10px;
+     padding: 5px;
+ }
+
+ #accBack {
+     background-color: rgb(224, 224, 6);
+     color: rgb(31, 7, 92);
+     font-weight: 400;
+     border-radius: 10px;
+     padding: 5px;
+     width: 20%;
+ }
+
+ #counter {
+     background-color: rgb(31, 7, 92);
+     font-size: 28px;
+     font-weight: 700;
+     backdrop-filter: blur(5px);
+     width: 100%;
+     max-width: 500px;
+     border-radius: 10px;
+     padding: 40px;
+     position: absolute;
+     right: 50%;
+     bottom: 50%;
+     transform: translate(50%, 50%)
+ }
+
+ @media(max-width: 578px) {
+     #Firsthotel {
+         background-color: #1f075c;
+         backdrop-filter: blur(5px);
+         width: 100%;
+         max-width: 400px;
+         border-radius: 10px;
+         padding: 40px;
+         position: absolute;
+         right: 15%;
+         bottom: 40%;
+         transform: translate(50%, 50%);
+
+     }
+ }

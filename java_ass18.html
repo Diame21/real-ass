@@ -315,13 +315,13 @@
                     </button><br><br>
                 </div>
             </div>
-            <button id="accBack" class="rounded mt-4">Back </button>
+            <button id="accBack" class="rounded mt-4 text-center">Back </button>
         </div>
     </div>
     <div id="forFree">
         <p id="forFreeContent"></p>
         <div class="text-center">
-            <button id="forFreeBut">Return back </button>
+            <button id="forFreeBut">Back</button>
         </div>
     </div>
     <div id="forHotel" class="m-auto">
@@ -332,18 +332,13 @@
                     <p class="mb-2">How long wiill you be staying with us?</p>
                     <p class="text-xl">Please,let us know the duration of your stay
                         so we can serve you better</p>
-                    <div class="forHotelContent3 p-4 flex flex-row gap-4">
-                        <input type="date" id="duration" class="date rounded">
-                        <button id="dateButton" class="choose">Choose</button>
-                    </div>
+                    <input type="date" id="duration" class="date rounded forHotelContent3 ml-10 mt-3">
                     <p id="myparagraph" class="rounded text-center"></p>
                 </div>
             </div>
-            <div class="text-center mt-5 bg-yellow-300 rounded p-3">
-                <button id="daysNext" class="rounded text-blue-950">Next</button>
-                <button id="daysBack" class="rounded">
-                    Back
-                </button>
+            <div class="text-center mt-5">
+                <button id="daysNext" class="bg-yellow-300 px-4 py-1 rounded text-blue-950 mr-16">Next</button>
+                <!-- <button id="forPaid" class="bg-yellow-300 text-blue-950 px-4 py-1 rounded">Back</button> -->
             </div>
         </div>
     </div>
@@ -357,109 +352,63 @@
                 <button id="Standard">Standard - #5,000 </button>
                 <button id="Emerald">Emerald - #15,000</button>
                 <button id="Supreme">Supreme - #25,000</button>
-                <button id="Presidential">Presdential - #90,000</button>
+                <button id="Presidential">Presidential - #90,000</button>
             </div>
-            <p id="daysMany" class="bg-yellow-300 text-2xl font-bold mt-{20px}"></p>
-            <div id="howMany rounded">
-                <p id="howDays" class="text-center mt-1"></p>
+            <div class="mb-5 flex flex-col items-center justify-center mt-5">
+                <label for="days" class="mr-2 text-blue-950 text-lg mb-2">How Many Nights:</label>
+                <input type="text" id="days"
+                    class="placeholder:opacity-75 text-blue-950 w-[300px] bg-transparent border-2 border-blue-950 p-2 rounded-3xl">
             </div>
-            <button id="roomBack" class="mt-3 rounded">
-                back
-            </button>
+
         </div>
     </div>
-    <div id="StandardRoom" style="margin: auto;">
-        <div class="text-center d-flex flex-column justify-content-center align-items-center strc">
-            <div id="StandardRoomC" style="color: yellow;">
-
-            </div>
-            <div class="mt-3">
-                <button id="cancel" class="mx-3">
-                    Cancel
-                </button>
-                <button id="Continue" class="mx-3">
-                    Continue
-                </button>
-            </div>
-        </div>
-
-    </div>
-    <div id="ContinueSt" style="margin: auto;">
-        <div class="continuecontent d-flex flex-column justify-content-center align-items-center">
-
-            <p id="ContinueStContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
-
-            </p>
+    <div id="stand" class="hidden style">
+        <h1>
+            Your Standard Room At #5,000 per Night. Your Bill At The Expiration of <span id="value1"></span>days will be
+            <span id="calc"></span>
+        </h1>
+        <div class='flex flex-row gap-5 w-fit m-auto'>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Cancel1">Cancel</button>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Continue1"> Continue</button>
         </div>
     </div>
-    <div id="EmeraldRoom" style="margin: auto;">
-        <div class="text-center d-flex flex-column justify-content-center align-items-center erc">
-
-            <div id="EmeraldRoomC" style="color: yellow;">
-
-            </div>
-            <div class="mt-3">
-                <button id="cancelEmerald" class="mx-3">
-                    Cancel
-                </button>
-                <button id="ContinueEmerald" class="mx-3">
-                    Continue
-                </button>
-            </div>
-        </div>
-
-    </div>
-    <div id="ContinueEmeraldC" style="margin: auto;">
-        <div class="Emeraldcontent d-flex flex-column justify-content-center align-items-center">
-            <p id="ContinueEmeraldContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
-
-            </p>
+    <div id="emer" class="hidden style">
+        <h1>Your Emerald Room At #15,000 per Night. Your Bill At The Expiration of <span id="value2"></span> will be
+            <span id="calc2"></span>
+        </h1>
+        <div class='flex flex-row gap-5 w-fit m-auto'>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Cancel2">Cancel</button>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Continue2"> Continue</button>
         </div>
     </div>
-    <div id="SupremeRoom" style="margin: auto;">
-        <div class="text-center d-flex flex-column justify-content-center align-items-center src">
-            <div id="SupremeRoomC" style="color: yellow;">
-
-            </div>
-            <div class="mt-3">
-                <button id="cancelSupreme" class="mx-3">
-                    Cancel
-                </button>
-                <button id="continueSupreme" class="mx-3">
-                    Continue
-                </button>
-            </div>
+    <div id="sup" class="hidden style ">
+        <h1>Your Supreme Room At #25,000 per Night. Your Bill At The Expiration of <span id="value3"></span> will be
+            <span id="calc3"></span>
+        </h1>
+        <div class='flex flex-row gap-5 w-fit m-auto'>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Cancel3">Cancel</button>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Continue3"> Continue</button>
         </div>
     </div>
-
-    <div id="ContinueSupremeC" style="margin: auto;">
-        <div class="Supremecontent d-flex flex-column justify-content-center align-items-center">
-            <p id="ContinueSupremeContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
-
-            </p>
+    <div id='pre' class="hidden style">
+        <!-- <div id="overlay" class="absolute inset-0 bg-[#001f3f]/70 rounded-3xl"></div>
+        <div class="relative z-10"> -->
+        <h1 class='text-[#ffd700] mt-[120px] font-black text-[30px] text-center p-[0 10px]'>Your Presidential room at
+            #40000 per night. your bill at the expiration of <span id="value4"></span> days will be <span
+                id="calc4"></span>
+        </h1>
+        <div class="flex flex-row gap-5 w-fit m-auto">
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Cancel4">Cancel</button>
+            <button class='bg-[#1f075c] px-4 py-1 rounded-xl text-[#f7f70a]' id="Continue4">Continue</button>
         </div>
+        <!-- </div> -->
     </div>
-    <div id="PresidentialRoom" style="margin: auto;">
-        <div class="text-center d-flex flex-column justify-content-center align-items-center prc">
-            <div id="PresidentialRoomC" style="color: yellow;" class="mx-3 text-center">
-
-            </div>
-            <div class="mt-3">
-                <button id="cancelPresidential" class="mx-3">
-                    Cancel
-                </button>
-                <button id="continuePresidential" class="mx-3">
-                    Continue
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="ContinuePresidentialC" style="margin: auto;">
-        <div class="Presidentialcontent d-flex flex-column justify-content-center align-items-center">
-            <p id="ContinuePresidentialContent" style="color: yellow; font-weight: 700;" class="mx-3 text-center">
-
-            </p>
+    <div id='counter'
+        class="card bg-[#001f3f] hidden bg-cover bg-center bg-opacity-50 relative md:w-[40%] w-[60%] p-10">
+        <div class="absolute inset-0 bg-[#001f3f]/70 rounded-3xl"></div>
+        <div class="relative z-10 bg-[#ffd700] rounded-3xl mt-14 px-3 py-5 text-center">
+            <h1 class="font-bold text-2xl text-[#001f3f] mb-5">Your rent expires in:</h1>
+            <div id="display" class="text-4xl font-bold text-[#001f3f]"></div>
         </div>
     </div>
     <script src="java_ass18.js"></script>
