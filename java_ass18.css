@@ -43,7 +43,7 @@
      position: absolute;
      right: 35%;
      bottom: 40%;
-     transform: translate(50%, 50%);
+     transform: translate(35%, 40%);
 
  }
 
@@ -328,18 +328,63 @@
      transform: translate(50%, 50%)
  }
 
- @media(max-width: 578px) {
+ @media(max-width: 480px) {
+    .allbox{
+        padding: 30px;
+    }
      #Firsthotel {
          background-color: #1f075c;
          backdrop-filter: blur(5px);
          width: 100%;
-         max-width: 400px;
+         max-width: 350px;
          border-radius: 10px;
          padding: 40px;
-         position: absolute;
-         right: 15%;
-         bottom: 40%;
-         transform: translate(50%, 50%);
+         position: relative;
+         left: -1%;
+         top: 20px;
+         transform: translate(10%, 20px);
 
      }
+
+     #Hotelform {
+         background-color: rgb(31, 7, 92);
+         backdrop-filter: blur(5px);
+         width: 100%;
+         max-width: 500px;
+         border-radius: 10px;
+         padding: 40px;
+         position: relative;
+         right: 50%;
+         top: 0%;
+         transform: translate(50%, 0%);
+     }
+
+     #loading1,
+     #loading2,
+     #loading3 {
+         /* background-color: rgb(31, 7, 92); */
+         backdrop-filter: blur(5px);
+         width: 100%;
+         max-width: 500px;
+         border-radius: 10px;
+         padding: 40px;
+         position: relative;
+         right: 50%;
+         top: 10%;
+         transform: translate(50%, 10%);
+     }
+
+     #typeOfAccommodation {
+         background-color: rgb(31, 7, 92);
+         backdrop-filter: blur(5px);
+         width: 100%;
+         max-width: 500px;
+         border-radius: 10px;
+         padding: 30px;
+         position: relative;
+         right: 45%;
+         top: 0%;
+         transform: translate(45%, 0%);
+     }
+
  }

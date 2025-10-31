@@ -18,7 +18,7 @@ let userName2 = document.getElementById("Name")
 let userRoom = document.getElementById("Room")
 let typeOfRoom = document.getElementById("roomType")
 let forFreeButton = document.getElementById("forFreeBut")
-let forHotel = document.getElementById("forHotel")
+// let forHotel = document.getElementById("forHotel")
 let forHotelContent = document.getElementById("forHotelContent1")
 let daysNext = document.getElementById("daysNext")
 let howDays = document.getElementById("days")
@@ -30,7 +30,7 @@ let accBack = document.getElementById("accBack")
 let value = document.getElementById("value1")
 let valueTwo = document.getElementById("value2")
 let valueThree = document.getElementById("value3")
-let valueFour= document.getElementById("value4")
+let valueFour = document.getElementById("value4")
 let calc = document.getElementById("calc")
 let calc2 = document.getElementById("calc2")
 let calc3 = document.getElementById("calc3")
@@ -45,7 +45,7 @@ hotelIntro.style.display = "block"
 typeOfAccomodation.style.display = "none"
 forFree.style.display = "none"
 hotelAccPage.style.display = "none"
-forHotel.style.display = "none"
+// forHotel.style.display = "none"
 
 
 
@@ -146,8 +146,8 @@ let mins;
 let secs;
 hotelAccommodation.addEventListener("click", () => {
     forFree.style.display = "none"
-    forHotelContent.textContent = `${first} ${last}`
-    forHotel.style.display = "block"
+    userName2.textContent = `${first} ${last}`
+    hotelAccPage.style.display = "block"
     typeOfAccomodation.style.display = "none"
 
 })
@@ -175,18 +175,18 @@ accBack.addEventListener("click", () => {
 })
 
 
-let duration = document.getElementById("duration")
-daysNext.addEventListener("click", () => {
-    if (duration.value.trim() !== '') {
-        hotelAccPage.style.display = 'block'
-        forHotel.style.display = 'none'
-    }
-    else {
-        duration.style.border = '4px solid red'
-        duration.focus()
-    }
-    userName2.textContent = `${first} ${last}`
-})
+// let duration = document.getElementById("duration")
+// daysNext.addEventListener("click", () => {
+//     if (duration.value.trim() !== '') {
+//         hotelAccPage.style.display = 'block'
+//         forHotel.style.display = 'none'
+//     }
+//     else {
+//         duration.style.border = '4px solid red'
+//         duration.focus()
+//     }
+//     userName2.textContent = `${first} ${last}`
+// })
 
 let stand = document.getElementById("stand")
 standard.addEventListener("click", () => {
@@ -206,10 +206,8 @@ standard.addEventListener("click", () => {
     }
     else {
         value.textContent = daysAsNumber;
-        // calc.textContent = daysAsNumber * 5000;
         userRoom.style.display = 'none'
         stand.style.display = 'block'
-        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
         calc.textContent = daysAsNumber * 5000;
     }
 })
@@ -232,15 +230,12 @@ emerald.addEventListener("click", () => {
     }
     else {
         valueTwo.textContent = daysAsNumber;
-        // calc.textContent = daysAsNumber * 15000;
         userRoom.style.display = 'none'
         eme.style.display = 'block'
-        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
         calc2.textContent = daysAsNumber * 15000;
     }
-    // userRoom.style.display = 'none'
-    // eme.style.display = 'block'
 })
+
 let sup = document.getElementById("sup")
 supreme.addEventListener("click", () => {
     const daysValue = howDays.value.trim();
@@ -259,15 +254,12 @@ supreme.addEventListener("click", () => {
     }
     else {
         valueThree.textContent = daysAsNumber;
-        // calc.textContent = daysAsNumber * 5000;
         userRoom.style.display = 'none'
         sup.style.display = 'block'
-        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
         calc3.textContent = daysAsNumber * 25000;
     }
-    // userRoom.style.display = 'none'
-    // sup.style.display = 'block'
 })
+
 let president = document.getElementById("pre")
 presidential.addEventListener("click", () => {
     const daysValue = howDays.value.trim();
@@ -286,14 +278,11 @@ presidential.addEventListener("click", () => {
     }
     else {
         valueFour.textContent = daysAsNumber;
-        // calc.textContent = daysAsNumber * 5000;
         userRoom.style.display = 'none'
         pre.style.display = 'block'
-        // stand.textContent = `Your Standard Room At #5,000 per Night. Your Bill At The Expiration of ${duration} will be`
         calc4.textContent = daysAsNumber * 90000;
     }
-    // userRoom.style.display = 'none'
-    // sup.style.display = 'block'
+   
 })
 
 // For standard 
@@ -301,6 +290,7 @@ let cancel = document.getElementById("Cancel1")
 cancel.addEventListener("click", () => {
     hotelAccPage.style.display = 'block'
     userRoom.style.display = 'block'
+    counter.style.display = 'none'
     stand.style.display = 'none'
     eme.style.display = 'none'
     sup.style.display = 'none'
@@ -313,6 +303,7 @@ let continueBtns = document.getElementById("Continue1")
 continueBtns.addEventListener("click", () => {
     hotelAccPage.style.display = "none"
     counter.style.display = 'block';
+    stand.style.display = 'none'
     const daysValue = Number(howDays.value.trim());
     const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
     let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
@@ -340,6 +331,7 @@ let cancelTwo = document.getElementById("Cancel2")
 cancelTwo.addEventListener("click", () => {
     hotelAccPage.style.display = 'block'
     userRoom.style.display = 'block'
+    counter.style.display = 'none'
     stand.style.display = 'none'
     eme.style.display = 'none'
     sup.style.display = 'none'
@@ -351,6 +343,7 @@ let continueBtnsTwo = document.getElementById("Continue2")
 continueBtnsTwo.addEventListener("click", () => {
     hotelAccPage.style.display = "none"
     counter.style.display = 'block';
+    eme.style.display = 'none'
     const daysValue = Number(howDays.value.trim());
     const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
     let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
@@ -377,6 +370,7 @@ let cancelThree = document.getElementById("Cancel3")
 cancelThree.addEventListener("click", () => {
     hotelAccPage.style.display = 'block'
     userRoom.style.display = 'block'
+    counter.style.display = 'none'
     stand.style.display = 'none'
     eme.style.display = 'none'
     sup.style.display = 'none'
@@ -388,6 +382,7 @@ let continueBtnsThree = document.getElementById("Continue3")
 continueBtnsThree.addEventListener("click", () => {
     hotelAccPage.style.display = "none"
     counter.style.display = 'block';
+    sup.style.display = 'none'
     const daysValue = Number(howDays.value.trim());
     const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
     let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
@@ -413,6 +408,7 @@ continueBtnsThree.addEventListener("click", () => {
 let cancelFour = document.getElementById("Cancel4")
 cancelFour.addEventListener("click", () => {
     hotelAccPage.style.display = 'block'
+    counter.style.display = 'none'
     userRoom.style.display = 'block'
     stand.style.display = 'none'
     eme.style.display = 'none'
@@ -425,6 +421,7 @@ let continueBtnsFour = document.getElementById("Continue4")
 continueBtnsFour.addEventListener("click", () => {
     hotelAccPage.style.display = "none"
     counter.style.display = 'block';
+    pre.style.display = 'none'
     const daysValue = Number(howDays.value.trim());
     const daysAsNumber = isNaN(daysValue) || daysValue <= 0 ? 1 : daysValue;
     let future = new Date().getTime() + (daysAsNumber * 24 * 60 * 60 * 1000);
